@@ -87,6 +87,31 @@
     body.terms-and-conditions-page h1.heading-h2-style,
     body.legal-disclaimer-page h1.heading-h2-style {
         color: #2F5F63;
+        font-family: "TAN-Angleton";
+        font-weight: 400;
+        letter-spacing: 2px;
+        font-size: 32px;
+    }
+
+    /* Legal page subheadings should match title style */
+    body.privacy-policy-page .heading-h3-style,
+    body.terms-and-conditions-page .heading-h3-style,
+    body.legal-disclaimer-page .heading-h3-style {
+        color: #2F5F63;
+        font-family: "TAN-Angleton";
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 140%;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    @media (max-width: 767px) {
+        body.privacy-policy-page .heading-h3-style,
+        body.terms-and-conditions-page .heading-h3-style,
+        body.legal-disclaimer-page .heading-h3-style {
+            font-size: 18px;
+        }
     }
     .heading-h3-style{
     font-family: Ogg Unlicensed Trial;
@@ -238,7 +263,7 @@
     line-height: 150%;
     }
     .heading-h2-style {
-        font-size: 33px;
+        font-size: 28px;
     }
 
      p {font-size: 16px;
