@@ -51,6 +51,13 @@ body {
     margin: 0; padding: 0;
     background-color: #FFFFFF ;
 }
+
+/* Trademark symbol styling (small + raised, like Figma) */
+sup.tm {
+  font-size: 0.6em;
+  line-height: 0;
+  vertical-align: super;
+}
 input::placeholder {
   color: #69443C; 
   opacity: 1; 
