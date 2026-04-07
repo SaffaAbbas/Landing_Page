@@ -74,6 +74,42 @@
         .header-new-left {
             margin-top: 40px;
         }
+
+    /* Center header logo on legal pages (desktop + mobile) */
+    body.privacy-policy-page .site-new-header .row,
+    body.terms-and-conditions-page .site-new-header .row,
+    body.legal-disclaimer-page .site-new-header .row {
+        justify-content: center !important;
+    }
+
+    body.privacy-policy-page .header-new-left,
+    body.terms-and-conditions-page .header-new-left,
+    body.legal-disclaimer-page .header-new-left {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    /* Smaller header logo on legal pages */
+    body.privacy-policy-page .general-logo,
+    body.terms-and-conditions-page .general-logo,
+    body.legal-disclaimer-page .general-logo {
+        height: 80px !important;
+        width: auto !important;
+        max-width: 220px;
+    }
+
+    @media (max-width: 767px) {
+        body.privacy-policy-page .general-logo,
+        body.terms-and-conditions-page .general-logo,
+        body.legal-disclaimer-page .general-logo {
+            height: 64px !important;
+            max-width: 200px;
+        }
+    }
     .privacy-logo{
         height: 107px;
         width: 223px;
@@ -113,7 +149,8 @@
         font-family: "TAN-Angleton";
         font-weight: 400;
         letter-spacing: 2px;
-        font-size: 32px;
+        /* match index.html INTRODUCING PARADISE BREEZE size */
+        font-size: 28px;
     }
 
     /* Legal page subheadings should match title style */
@@ -123,7 +160,7 @@
         color: #2F5F63;
         font-family: "TAN-Angleton";
         font-weight: 400;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 140%;
         letter-spacing: 1px;
         text-transform: uppercase;
@@ -133,7 +170,7 @@
         body.privacy-policy-page .heading-h3-style,
         body.terms-and-conditions-page .heading-h3-style,
         body.legal-disclaimer-page .heading-h3-style {
-            font-size: 18px;
+            font-size: 15px;
         }
     }
     .heading-h3-style{
