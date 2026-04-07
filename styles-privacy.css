@@ -5,10 +5,33 @@
     }
     body {
         font-family: 'Neue Montreal';
-        background-color: #ffffff !important;
+        /* Match index.html page background */
+        background-color: #F0ECE4 !important;
         color: #2B2B2B;
         line-height: 1.6;
         margin: 0;
+    }
+
+    /* Footer (legal pages) */
+    .footer {
+        background-color: #2F7F86;
+        color: #FFFFFF;
+        font-family: 'Public Sans', sans-serif !important;
+    }
+    .footer p,
+    .footer a,
+    .footer-links a,
+    .footer-links span,
+    .footer-bottom,
+    .footer-copyright {
+        color: #FFFFFF !important;
+        font-family: 'Public Sans', sans-serif !important;
+    }
+
+    /* Footer links should be regular (not bold) */
+    .footer a,
+    .footer-links a {
+        font-weight: 400 !important;
     }
     .img-logo{
         height: 106px;
