@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradise Breeze - Our Neighborhood</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-privacy.css">
+</head>
+<style>
+
+    html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+section.story-name-section {
+  flex: 1;
+}
+
+    /* Side navigation on the right */
+    .side-nav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        right: 0;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.4s ease;
+        padding-top: 80px;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .side-nav-content {
+        margin-top: 60px;
+        padding-right: 30px;
+        padding-left: 10px;
+    }
+
+
+
+    .side-nav-content a {
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #69443C;
+        display: block;
+        text-align: right;
+        font-family: 'Neue Montreal', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    .side-nav-content a:hover {
+        text-decoration: underline;
+        /* Dark gray on hover, optional */
+        background-color: rgba(255, 255, 255, 0.15);
+        color: #4fa3a5;
+        padding-right: 40px;
+    }
+
+    .side-nav-content a:active,
+
+    /* Keyboard focus */
+    .side-nav-content a:focus {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: #69443C;
+        text-decoration: underline;
+    }
+
+    .side-nav-content a:hover,
+    .side-nav-content a:active,
+    .side-nav-content a:focus,
+    .side-nav-content a:focus-visible {
+        text-decoration: underline;
+        background-color: rgba(255, 255, 255, 0.15);
+        color: #4fa3a5;
+        padding-right: 40px;
+    }
+
+    .menu-btn {
+        background: #ffffff;
+        border: none;
+        padding: 6px 14px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        font-size: 16px;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    .menu-btn.text-active {
+        color: #d1b183;
+    }
+
+    .menu-btn.text-active {
+        background: #fff;
+    }
+.site-new-header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* make sure it stays above hero image */
+  background: transparent; /* transparent over hero */
+  padding: 20px 0;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  
+}
+/* Side navigation on the right */
+.side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.4s ease;
+    padding-top: 80px;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+}
+.side-nav-content {
+    margin-top: 40px;   /* neeche lane ke liye */
+    padding-right: 20px; /* right side shift */
+    padding-left: 20px;  /* thoda space left se */
+}
+
+
+
+.side-nav-content a {
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #69443C ;
+    display: block;
+    text-align: center;
+    font-family: 'Neue Montreal', sans-serif;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    padding: 8px 0;
+    display: block;
+    line-height: 1.8;
+}
+
+
+.side-nav-content a:hover {
+    text-decoration: underline; /* Dark gray on hover, optional */
+    background-color: rgba(255, 255, 255, 0.15);
+    color:#4fa3a5;
+    padding-right: 40px;
+}
+.side-nav-content a:active,
+
+/* Keyboard focus */
+.side-nav-content a:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    color :#69443C;
+    text-decoration: underline;
+}
+.side-nav-content a:hover,
+.side-nav-content a:active,
+.side-nav-content a:focus,
+.side-nav-content a:focus-visible {
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #4fa3a5;
+    padding-right: 40px;
+}
+
+
+.menu-btn {
+  background: #ffffff;
+  border: none;
+  padding: 6px 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.menu-btn.text-active {
+  color: #d1b183;
+}
+.menu-btn.text-active {
+  background: #fff;
+}
+
+.story-name-section {
+  margin-top: 140px;
+}
+
+
+
+</style>
+<body >
+<div id="myNav" class="side-nav">
+    <div class="side-nav-content">
+        <a href="./index.html" onclick="toggleNav()">Home</a>
+        <a href="./paradise-on-earth.html" onclick="toggleNav()">Paradise On Earth</a>
+        <a href="./our-story.html" onclick="toggleNav()">Our Story</a>
+        <a href="./the-residences.html" onclick="toggleNav()">The Residences</a>
+        <a href="./amenities-and-services.html" onclick="toggleNav()">Amenities & Services</a>
+        <a href="./our-neighborhood.html" onclick="toggleNav()">Our Neighborhood</a>
+        <a href="./gallery.html" onclick="toggleNav()">Gallery</a>
+        <a href="./investing-in-the-bahamas.html" onclick="toggleNav()">Investing in the Bahamas</a>
+        <a href="./hotel-rental-program.html" onclick="toggleNav()">Hotel Rental Program</a>
+        <a href="./downloads.html" onclick="toggleNav()">Downloads</a>
+        <a href="./contact-us.html" onclick="toggleNav()">Contact Us</a>
+    </div>
+</div>
+<nav class="navbar fixed-top  site-header">
+    <div class="container-fluid px-4 px-lg-5">
+        <div class="row w-100 align-items-center m-0">
+
+                        <div class="col-6 col-md-2 header-new-left">
+                            <a href="./index.html">
+                                <img src="images/3000x1117 transparent.png" class="img img-fluid general-logo" alt="Logo">
+                            </a>
+                        </div>
+            <div class="col-6 col-md-10 d-flex justify-content-end p-0">
+                <button id="menuBtn" class="menu-trigger hamburger-btn border-0 bg-transparent" onclick="toggleNav()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+</nav>
+    
+    <section class="story-name-section">
+        <div class="container-xl">
+            <div class="row align-items-center g-5">
+                <h1 class="heading-h2-style">
+                    THANK YOU FOR SUBMITTING AN INQUIRY.<br>
+                    OUR TEAM WILL CONTACT YOU SHORTLY.</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- THINGS TO DO SECTION -->
+  <!-- Footer Section -->
+    <footer class="footer">
+        <div class="contaienr">
+            <div class="row footer-row">
+                <div class="col-12 col-md-4 footer-left">
+                    <img src="images/new-footer-logo.png" alt="Paradise Breeze Logo" class="img-fluid footer-logo">
+                </div>
+                <div class="col-12 col-md-3 ms-md-auto right-col">
+                    <p><a href="mailto:info@paradisebreeze.com"
+                            style="color: #fff;text-decoration: none;">info@paradisebreeze.com</a></p>
+                    <p>www.paradisebreeze.com</p>
+                    <p>West Bay Street, Nassau, Bahamas</p>
+                </div>
+                <div class="col-12 col-md-3 ms-md-auto right-col right-gap">
+                    <p>
+                        <a href="https://www.instagram.com/paradisebreezebahamas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: none;">
+                            Instagram
+                        </a>
+                    </p>
+                    
+                    <p>
+                        <a href="https://www.facebook.com/share/1BsF1JqySu/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"
+                            style="color: #fff; text-decoration: none;">
+                            Facebook
+                        </a>
+                    </p>
+                
+                    <p>
+                        <a href="https://www.linkedin.com/company/paradise-breeze/" target="_blank" rel="noopener noreferrer"
+                            style="color: #fff;text-decoration: none;">
+                            LinkedIn
+                        </a>
+                    </p>
+                </div>
+    
+                <div class="col-12 col-md-2 footer-right">
+                    <img src="images/logo-footer.png" alt="logo footer" class="img-fluid">
+                </div>
+            </div>
+            <div class="footer-inner">
+    
+            </div>
+    
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Paradise Breeze - All Rights Reserved</p>
+    
+                <div class="footer-links">
+                    <a href="./privacy-policy.html">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="./terms-and-conditions.html">Terms & Conditions</a>
+                    <span>|</span>
+                    <a href="./legal-disclaimer.html">Legal Disclaimer</a>
+                </div>
+            </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById("myNav");
+            const btn = document.getElementById("menuBtn");
+
+            if (nav.style.width === "250px") {
+                // CLOSE
+                nav.style.width = "0";
+                btn.classList.remove("active");
+            } else {
+                // OPEN
+                nav.style.width = "250px";
+                btn.classList.add("active");
+            }
+        }
+    </script>
+</body>
+
+</html>                                          

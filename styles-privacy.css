@@ -1,0 +1,226 @@
+
+    /* RESET & BASE STYLES */
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Neue Montreal';
+        background-color: #ffffff !important;
+        color: #69443C;
+        line-height: 1.6;
+        margin: 0;
+    }
+    .img-logo{
+        height: 106px;
+    }
+    .site-header {
+    height: 110px;
+    z-index: 1050;
+    background-color: #ffffff;
+}
+
+.overlay-content {
+    position: relative;  width: 100%; text-align: right; padding-right: 5%;
+      height: 800px;
+    background-color: #ffffff;
+    padding-top: 10%;
+}
+    /* --- FIXED HEADER STYLES --- */
+    header {
+        
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 90px;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 40px;
+        z-index: 1000; 
+    }
+    .content-container{
+        margin-top: 50px;
+    }
+    .header-left{
+        margin-top: 40px;
+    } 
+    .header-new-left {
+         margin-top: 40px;
+     }
+        .header-new-left {
+            margin-top: 40px;
+        }
+    .privacy-logo{
+        height: 107px;
+        width: 223px;
+    }
+
+  
+    .logo-heading{
+        font-family:Ogg Unlicensed Trial ;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 25.16px;
+        line-height: 100%;
+        letter-spacing: 2%;
+        text-transform: uppercase;
+        color:#3395A0;
+    }
+    .content-start{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        text-align: justify;
+    }
+    .heading-h2-style{
+        font-family: Ogg Unlicensed Trial;
+        font-size: 40px;
+        line-height: 130%;
+        font-style: normal;
+        text-align: center;
+        text-transform: uppercase;
+        color: #3395A0;
+    }
+    .heading-h3-style{
+    font-family: Ogg Unlicensed Trial;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    color: #3395A0;
+    }
+        @media (max-width: 767px) {
+            .heading-h3-style {
+                letter-spacing: normal !important;
+                word-spacing: normal !important;
+                text-align: left !important;
+            }
+        }
+    .legal-disclaimer-text{
+        margin-left: 100px;
+        margin-right: 100px;
+        font-family: 'Neue Montreal';
+    }
+        @media (max-width: 767px) {
+            .legal-disclaimer-text p {
+                letter-spacing: normal !important;
+                word-spacing: normal !important;
+            }
+        }
+                          @media (max-width: 575px) {
+                              .legal-disclaimer-text {
+                                  margin-left: 15px;
+                                  margin-right: 15px;
+                                font-family: 'Neue Montreal';
+                              }
+            
+                              .legal-disclaimer-text p,
+                              .legal-disclaimer-text li {
+                                  text-align: left !important;
+                                  /* 🔥 Left align for clean look */
+                                  letter-spacing: normal !important;
+                                  word-spacing: normal !important;
+                                  hyphens: auto;
+                                font-family: 'Neue Montreal';
+                              }
+                          }
+    p{
+        font-family:'Neue Montreal';
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 160%;
+        letter-spacing: 0%;
+
+    }
+    p span{
+       color: #3395A0;
+    }
+
+    .header-subtitle {
+        color: #6e5c5c;
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-top: 2px;
+    }
+
+
+    /* --- MAIN CONTENT STYLES --- */
+    .policy-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 40px 20px 60px 20px;
+        min-height: 60vh;
+    }
+
+
+    .policy-container p {
+        font-size: 15px;
+        margin-bottom: 15px;
+        color: #69443C;
+        font-family: "Neue Montreal";
+    }
+
+    a {
+        color: #4da9a6;
+        text-decoration: underline;
+    }
+    
+    a:hover {
+        text-decoration: none;
+    }
+
+    .policy-item ul {
+        margin-bottom: 20px;
+        padding-left: 25px;
+        font-family: "Neue Montreal";
+    }
+
+    li {
+        margin-bottom: 8px;
+        font-size: 18px;
+        color: #69443C;
+        font-family: "Neue Montreal";
+        font-weight: 400;
+    }
+
+    .highlight-teal {
+        color: #4da9a6;
+    }
+
+    .contact-info {
+        margin-top: 10px;
+        font-family: "Neue Montreal";
+    }
+
+    
+    @media (max-width: 499px) {
+    .legal-disclaimer-text{
+        margin:20px;
+    }
+    header{
+        display: inline;
+    }
+    .overlay-content{
+        padding-top: 110px;
+    }
+    p{
+        letter-spacing: -1.0px;
+    }
+    li{
+        letter-spacing: -1.0px;
+        font-size: 16px;
+    line-height: 150%;
+    }
+    .heading-h2-style {
+        font-size: 33px;
+    }
+
+     p {font-size: 16px;
+    line-height: 150%;
+     }
+
+    }
+
+    
