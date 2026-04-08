@@ -343,6 +343,13 @@
             padding-right: 40px;
         }
 
+        /* Mobile only: add right breathing room */
+        @media (max-width: 767.98px) {
+            .side-nav-content a {
+                margin-right: 20px;
+            }
+        }
+
         /* Desktop: slightly tighter menu link spacing */
         @media (min-width: 768px) {
             .side-nav-content {
@@ -1059,7 +1066,7 @@
                 max-height: 63.83px;
                 max-width: 160px;
                 object-position: left;
-                transform: translateX(-42px);
+                transform: translateX(-30px);
             }
 
             .site-header--cream .header-brand-stack {
@@ -1096,6 +1103,7 @@
             .site-header--cream .hamburger-btn {
                 font-size: 14px;
                 padding: 4px 4px;
+                margin-right: 10px;
             }
         }
 

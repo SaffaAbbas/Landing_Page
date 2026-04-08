@@ -478,3 +478,42 @@ font-family: "TAN-Angleton";
     }
 
 }
+
+/* Mobile only: footer legal links exactly 12px */
+@media (max-width: 767px) {
+  .footer-links,
+  .footer-links a {
+    font-size: 12px !important;
+  }
+}
+
+/* Mobile only: footer contact + social text 14px (not legal links) */
+@media (max-width: 767px) {
+  .footer .right-col p,
+  .footer .right-col a,
+  .footer .social-col a,
+  .footer .social-col p {
+    font-size: 14px !important;
+  }
+}
+
+/* Mobile only: copyright 12px (avoid 768px overlap) */
+@media (max-width: 767.98px) {
+  .footer .footer-bottom .footer-copyright {
+    font-size: 12px !important;
+  }
+}
+
+/* Desktop: footer contact + social 16px, copyright 14px */
+@media (min-width: 768px) {
+  .footer .right-col p,
+  .footer .right-col a,
+  .footer .social-col a,
+  .footer .social-col p {
+    font-size: 16px !important;
+  }
+
+  .footer-copyright {
+    font-size: 14px !important;
+  }
+}
