@@ -189,8 +189,8 @@ letter-spacing: 0%;
 /* Homepage only: set INTRODUCING / CURIO lines to 32px */
 .intro-section .intro-heading-angleton .intro-line1,
 .intro-section .intro-heading-angleton .intro-line3 {
-    /* Match RESIDENCES / THE HOTEL title sizing */
-    font-size: 20px;
+    /* Desktop/tablet */
+    font-size: 28px;
     line-height: 1.4;
 }
 
@@ -234,6 +234,12 @@ letter-spacing: 0%;
   .intro-section .central-head-text .body-text,
   .intro-section .central-head-text .body-text p {
     text-align: left !important;
+  }
+
+  /* Mobile: intro paragraphs should be 16px */
+  .intro-section .body-text p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
   }
 
   .main-heading-teal {
