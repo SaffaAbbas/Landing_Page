@@ -193,6 +193,19 @@ letter-spacing: 0%;
     line-height: 1.8;
 }
 
+/* Alternate mobile-only intro heading */
+.intro-heading-mobile {
+  display: none;
+}
+
+.intro-heading-desktop {
+  display: block;
+}
+
+.intro-heading-mobile .intro-mobile-line {
+  display: block;
+}
+
 /* Desktop: keep these 2 lines unbroken */
 @media (min-width: 992px) {
   .intro-section .intro-heading-angleton .intro-line1,
@@ -201,6 +214,24 @@ letter-spacing: 0%;
   }
 }
 @media (max-width: 767px) {
+  .intro-heading-desktop {
+    display: none;
+  }
+
+  .intro-heading-mobile {
+    display: block;
+  }
+
+  /* Mobile: keep headings centered, but force intro paragraphs left */
+  .intro-section .central-head-text {
+    text-align: center;
+  }
+
+  .intro-section .central-head-text .body-text,
+  .intro-section .central-head-text .body-text p {
+    text-align: left !important;
+  }
+
   .main-heading-teal {
     font-family: "TAN-Angleton";
     font-size: 1.4rem;
@@ -559,12 +590,13 @@ color:#2F7F86 ;
 
 /* Mobile Responsive */
 @media (max-width: 992px) {
+    .slider-section-container { overflow: visible; }
     .slider-wrapper { flex-direction: column !important; }
     .slider-image-area img { height: 200px; } 
     .slider-image-area { width: 100%; }
     .slider-text-card {
         position: relative; width: 90%; right: auto; left: auto; top: auto;
-        transform: none; margin-top: -50px; margin-bottom: 30px; margin-left: auto; margin-right: auto;
+        transform: none; margin-top: 64px; margin-bottom: 30px; margin-left: auto; margin-right: auto;
     }
     .intro-section { padding: 60px 20px; }
     .selling-text-section { padding: 60px 20px; }

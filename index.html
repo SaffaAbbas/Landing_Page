@@ -1108,11 +1108,11 @@
         /* Mobile: tighten side-nav spacing + text size */
         @media (max-width: 767px) {
             .side-nav {
-                padding-top: 56px;
+                padding-top: 78px;
             }
 
             .side-nav-content {
-                margin-top: 12px;
+                margin-top: 28px;
                 padding-right: 6px;
                 padding-left: 0;
             }
@@ -1921,9 +1921,19 @@ select.form-input {
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-xl-9 text-center central-head-text">
                     <h4 class="sub-heading-small">A NEW EXPRESSION OF HOSPITALITY IN THE BAHAMAS</h4>
-                    <h2 class="main-heading-teal intro-heading-angleton">
-                        <span class="intro-line1">INTRODUCING PARADISE BREEZE NASSAU
+                    <!-- Desktop/tablet heading (2-line layout) -->
+                    <h2 class="main-heading-teal intro-heading-angleton intro-heading-desktop">
+                        <span class="intro-line1">INTRODUCING PARADISE BREEZE NASSAU</span>
                         <span class="intro-line3"> CORIO COLLECTION BY HILTON</span>
+                    </h2>
+
+                    <!-- Mobile heading (match line breaks/order from design) -->
+                    <h2 class="main-heading-teal intro-heading-angleton intro-heading-mobile" aria-label="INTRODUCING PARADISE BREEZE NASSAU CURIO COLLECTION BY HILTON">
+                        <span class="intro-mobile-line">INTRODUCING</span>
+                        <span class="intro-mobile-line">PARADISE BREEZE</span>
+                        <span class="intro-mobile-line">NASSAU</span>
+                        <span class="intro-mobile-line">CURIO COLLECTION</span>
+                        <span class="intro-mobile-line">BY HILTON</span>
                     </h2>
 
                     <div class="body-text">
@@ -2096,7 +2106,7 @@ select.form-input {
         <div class="container">
             <div class="row footer-row">
                 <div class="col-12 col-md-4 footer-left">
-                    <img src="images/Frame 22.png" alt="Paradise Breeze Logo" class="img-fluid footer-logo">
+                    <img src="images/logo short white.png" alt="Paradise Breeze Logo" class="img-fluid footer-logo">
                 </div>
                 <div class="col-12 col-md-3 ms-md-auto right-col">
                     <p><a href="mailto:info@paradisebreeze.com"
