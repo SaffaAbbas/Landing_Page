@@ -261,43 +261,20 @@ section.story-name-section {
 
 
 </style>
-<body >
-<div id="myNav" class="side-nav">
-    <div class="side-nav-content">
-        <a href="./index.html" onclick="toggleNav()">Home</a>
-        <a href="./paradise-on-earth.html" onclick="toggleNav()">Paradise On Earth</a>
-        <a href="./our-story.html" onclick="toggleNav()">Our Story</a>
-        <a href="./the-residences.html" onclick="toggleNav()">The Residences</a>
-        <a href="./amenities-and-services.html" onclick="toggleNav()">Amenities & Services</a>
-        <a href="./our-neighborhood.html" onclick="toggleNav()">Our Neighborhood</a>
-        <a href="./gallery.html" onclick="toggleNav()">Gallery</a>
-        <a href="./investing-in-the-bahamas.html" onclick="toggleNav()">Investing in the Bahamas</a>
-        <a href="./hotel-rental-program.html" onclick="toggleNav()">Hotel Rental Program</a>
-        <a href="./downloads.html" onclick="toggleNav()">Downloads</a>
-        <a href="./contact-us.html" onclick="toggleNav()">Contact Us</a>
-    </div>
-</div>
-<nav class="navbar fixed-top  site-header">
-    <div class="container-fluid px-4 px-lg-5">
-        <div class="row w-100 align-items-center m-0">
+<body class="thank-you-page">
 
-                        <div class="col-6 col-md-2 header-new-left">
-                            <a href="./index.html">
-                                <img src="images/3000x1117 transparent.png" class="img img-fluid general-logo" alt="Logo">
-                            </a>
-                        </div>
-            <div class="col-6 col-md-10 d-flex justify-content-end p-0">
-                <button id="menuBtn" class="menu-trigger hamburger-btn border-0 bg-transparent" onclick="toggleNav()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+    <!-- Header (match privacy-policy style: logo only, no menu) -->
+    <nav class="navbar site-new-header">
+        <div class="container-fluid px-4 px-lg-5">
+            <div class="row w-100 align-items-center m-0">
+                <div class="col-6 col-md-2 header-new-left">
+                    <a href="./index.html">
+                        <img src="images/logo full.svg" class="img img-fluid general-logo" alt="Logo">
+                    </a>
+                </div>
             </div>
-
         </div>
-    </div>
-
-</nav>
+    </nav>
     
     <section class="story-name-section">
         <div class="container-xl">
@@ -368,50 +345,6 @@ section.story-name-section {
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function isNavOpen(navEl) {
-            return navEl && navEl.style.width && navEl.style.width !== "0px" && navEl.style.width !== "0";
-        }
-
-        function closeNav() {
-            const nav = document.getElementById("myNav");
-            const btn = document.getElementById("menuBtn");
-            if (!nav || !btn) return;
-            nav.style.width = "0";
-            btn.classList.remove("active");
-        }
-
-        function openNav() {
-            const nav = document.getElementById("myNav");
-            const btn = document.getElementById("menuBtn");
-            if (!nav || !btn) return;
-            const w = window.innerWidth <= 767 ? "175px" : "250px";
-            nav.style.width = w;
-            btn.classList.add("active");
-        }
-
-        function toggleNav() {
-            const nav = document.getElementById("myNav");
-            if (!nav) return;
-            if (isNavOpen(nav)) closeNav();
-            else openNav();
-        }
-
-        document.addEventListener("click", function (e) {
-            const nav = document.getElementById("myNav");
-            const btn = document.getElementById("menuBtn");
-            if (!nav || !btn) return;
-            if (!isNavOpen(nav)) return;
-
-            const clickedInsideNav = nav.contains(e.target);
-            const clickedMenuBtn = btn.contains(e.target);
-            if (!clickedInsideNav && !clickedMenuBtn) closeNav();
-        });
-
-        document.addEventListener("keydown", function (e) {
-            if (e.key === "Escape") closeNav();
-        });
-    </script>
 </body>
 
 </html>                                          

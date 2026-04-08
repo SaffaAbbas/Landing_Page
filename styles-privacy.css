@@ -12,6 +12,21 @@
         margin: 0;
     }
 
+    /* Thank you page: remove white block + tighten spacing */
+    body.thank-you-page .story-name-section {
+        background-color: #F0ECE4 !important;
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+        margin-top: 0 !important;
+    }
+
+    @media (max-width: 767px) {
+        body.thank-you-page .story-name-section {
+            padding-top: 40px !important;
+            padding-bottom: 40px !important;
+        }
+    }
+
     /* Footer (legal pages) */
     .footer {
         background-color: #2F7F86;
@@ -78,13 +93,15 @@
     /* Center header logo on legal pages (desktop + mobile) */
     body.privacy-policy-page .site-new-header .row,
     body.terms-and-conditions-page .site-new-header .row,
-    body.legal-disclaimer-page .site-new-header .row {
+body.legal-disclaimer-page .site-new-header .row,
+body.thank-you-page .site-new-header .row {
         justify-content: center !important;
     }
 
     body.privacy-policy-page .header-new-left,
     body.terms-and-conditions-page .header-new-left,
-    body.legal-disclaimer-page .header-new-left {
+body.legal-disclaimer-page .header-new-left,
+body.thank-you-page .header-new-left {
         flex: 0 0 100% !important;
         max-width: 100% !important;
         width: 100% !important;
@@ -96,7 +113,8 @@
     /* Give header more vertical space (like index.html) */
     body.privacy-policy-page .site-new-header,
     body.terms-and-conditions-page .site-new-header,
-    body.legal-disclaimer-page .site-new-header {
+body.legal-disclaimer-page .site-new-header,
+body.thank-you-page .site-new-header {
         padding-top: 26px !important;
         padding-bottom: 18px !important;
     }
@@ -104,14 +122,16 @@
     /* Remove extra top margin so logo sits nicely */
     body.privacy-policy-page .header-new-left,
     body.terms-and-conditions-page .header-new-left,
-    body.legal-disclaimer-page .header-new-left {
+body.legal-disclaimer-page .header-new-left,
+body.thank-you-page .header-new-left {
         margin-top: 0 !important;
     }
 
     @media (max-width: 767px) {
         body.privacy-policy-page .site-new-header,
         body.terms-and-conditions-page .site-new-header,
-        body.legal-disclaimer-page .site-new-header {
+        body.legal-disclaimer-page .site-new-header,
+        body.thank-you-page .site-new-header {
             padding-top: 20px !important;
             padding-bottom: 14px !important;
         }
@@ -120,7 +140,8 @@
     /* Smaller header logo on legal pages */
     body.privacy-policy-page .general-logo,
     body.terms-and-conditions-page .general-logo,
-    body.legal-disclaimer-page .general-logo {
+body.legal-disclaimer-page .general-logo,
+body.thank-you-page .general-logo {
         height: 80px !important;
         width: auto !important;
         max-width: 220px;
@@ -129,7 +150,8 @@
     @media (max-width: 767px) {
         body.privacy-policy-page .general-logo,
         body.terms-and-conditions-page .general-logo,
-        body.legal-disclaimer-page .general-logo {
+        body.legal-disclaimer-page .general-logo,
+        body.thank-you-page .general-logo {
             height: 64px !important;
             max-width: 200px;
         }
@@ -168,7 +190,8 @@
     /* Page title color (only the top H1 title on legal pages) */
     body.privacy-policy-page h1.heading-h2-style,
     body.terms-and-conditions-page h1.heading-h2-style,
-    body.legal-disclaimer-page h1.heading-h2-style {
+body.legal-disclaimer-page h1.heading-h2-style,
+body.thank-you-page h1.heading-h2-style {
         color: #2F5F63;
         font-family: "TAN-Angleton";
         font-weight: 400;
@@ -181,10 +204,16 @@
     @media (max-width: 767px) {
         body.privacy-policy-page h1.heading-h2-style,
         body.terms-and-conditions-page h1.heading-h2-style,
-        body.legal-disclaimer-page h1.heading-h2-style {
+        body.legal-disclaimer-page h1.heading-h2-style,
+        body.thank-you-page h1.heading-h2-style {
             font-size: 20px;
             line-height: 130%;
         }
+    }
+
+    /* Thank you page should use same footer color as legal pages */
+    body.thank-you-page .footer {
+        background-color: #2F7F86;
     }
 
     /* Legal page subheadings should match title style */

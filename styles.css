@@ -189,8 +189,9 @@ letter-spacing: 0%;
 /* Homepage only: set INTRODUCING / CURIO lines to 32px */
 .intro-section .intro-heading-angleton .intro-line1,
 .intro-section .intro-heading-angleton .intro-line3 {
-    font-size: 28px;
-    line-height: 1.8;
+    /* Match RESIDENCES / THE HOTEL title sizing */
+    font-size: 20px;
+    line-height: 1.4;
 }
 
 /* Alternate mobile-only intro heading */
@@ -204,6 +205,9 @@ letter-spacing: 0%;
 
 .intro-heading-mobile .intro-mobile-line {
   display: block;
+  /* Match RESIDENCES / THE HOTEL title sizing */
+  font-size: 20px;
+  line-height: 1.4;
 }
 
 /* Desktop: keep these 2 lines unbroken */
@@ -234,8 +238,8 @@ letter-spacing: 0%;
 
   .main-heading-teal {
     font-family: "TAN-Angleton";
-    font-size: 1.4rem;
-    line-height: 1.3;
+    font-size: 20px;
+    line-height: 1.4;
     margin-bottom: 24px;
   }
 
@@ -304,10 +308,10 @@ letter-spacing: 0%;
   border-color: #3395A0;
 }
 .footer-logo{
-  /* Keep logo crisp: never distort aspect ratio */
   width: 246px;
-  height: auto;
+  height: 37px;
   max-width: 100%;
+  object-fit: contain;
   image-rendering: auto;
   
 
