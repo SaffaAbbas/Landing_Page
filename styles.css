@@ -441,8 +441,75 @@ color:#2F7F86 ;
 .social-block { 
     display: flex; justify-content: center; align-items: center; 
     margin-bottom: 40px; /* Space between text and grid */
+    gap: 16px;
+    flex-wrap: nowrap;
 }
 .social-text { font-size: 0.9rem; letter-spacing: 2px; color: #5c554e; text-transform: uppercase; }
+
+/* Instagram handle strip (text layer, not image) */
+.social-handle {
+    font-family: "Public Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    color: #B8926A;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.social-star {
+    width: 48px;
+    height: 49px;
+    display: block;
+    opacity: 1;
+    object-fit: contain;
+    margin: 0 -10px;
+}
+
+@media (max-width: 767px) {
+    .social-block {
+        gap: 10px;
+        margin-bottom: 28px;
+        flex-wrap: nowrap;
+        padding: 0 10px;
+    }
+    .social-handle {
+        font-size: clamp(12px, 4.2vw, 18px);
+        text-align: center;
+        white-space: nowrap;
+    }
+    .social-star {
+        width: 34px;
+        height: 35px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .social-block {
+        gap: 8px;
+    }
+    .social-handle {
+        font-size: clamp(12px, 4.4vw, 16px);
+        letter-spacing: 0.01em;
+    }
+    .social-star {
+        width: 30px;
+        height: 31px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 360px) {
+    .social-handle {
+        font-size: 14px;
+    }
+    .social-star {
+        width: 26px;
+        height: 27px;
+    }
+}
 
 /* Tall Image Layout */
 .social-img-wrapper {
@@ -729,12 +796,13 @@ font-family: 'Neue Montreal', sans-serif;
   color: #1aa5b7;
   margin-bottom: 20px;
 }
-.social-block img{
+/* Legacy rule (was for handle image). Keep stars sized via `.social-star`. */
+.social-block img:not(.social-star) {
   width: 671px;
 }
 
 @media (max-width: 767px) {
-  .social-block img {
+  .social-block img:not(.social-star) {
     width: 90vw;
     /* screen ke hisaab se bari */
     max-width: 90vw;
@@ -742,7 +810,7 @@ font-family: 'Neue Montreal', sans-serif;
 }
 
 @media (max-width: 767px) {
-  .social-block img {
+  .social-block img:not(.social-star) {
     transform: scale(1.20);
   }
 }

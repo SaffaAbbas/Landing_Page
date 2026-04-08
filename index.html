@@ -143,7 +143,7 @@
         }
 
         .sub-heading-small {
-            font-family: 'Neue Montreal', sans-serif;
+            font-family: 'Public Sans', sans-serif;
             font-weight: 300;
             font-style: normal;
             font-size: 20px;
@@ -234,8 +234,18 @@
             .intro-heading-angleton .intro-line1,
             .intro-heading-angleton .intro-line2,
             .intro-heading-angleton .intro-line3 {
-                font-size: 20px !important;
-                line-height: 1.3 !important;
+                font-size: 18px !important;
+                line-height: 1.25 !important;
+            }
+        }
+
+        /* Extra safety for very small screens */
+        @media (max-width: 575px) {
+            .intro-section .intro-heading-angleton,
+            .intro-section .intro-heading-angleton .intro-line1,
+            .intro-section .intro-heading-angleton .intro-line2,
+            .intro-section .intro-heading-angleton .intro-line3 {
+                font-size: 18px !important;
             }
         }
 
@@ -299,10 +309,10 @@
             padding: 14px 20px;
             text-decoration: none;
             font-size: 18px;
-            color: #69443C;
+            color: #2B2B2B;
             display: block;
             text-align: right;
-            font-family: 'Neue Montreal', sans-serif;
+            font-family: 'Public Sans', sans-serif;
             transition: all 0.3s ease;
         }
 
@@ -310,7 +320,7 @@
             text-decoration: underline;
             /* Dark gray on hover, optional */
             background-color: rgba(255, 255, 255, 0.15);
-            color: #4fa3a5;
+            color: #2F5F63;
             padding-right: 40px;
         }
 
@@ -319,7 +329,7 @@
         /* Keyboard focus */
         .side-nav-content a:focus {
             background-color: rgba(255, 255, 255, 0.15);
-            color: #69443C;
+            color: #2F5F63;
             text-decoration: underline;
         }
 
@@ -329,7 +339,7 @@
         .side-nav-content a:focus-visible {
             text-decoration: underline;
             background-color: rgba(255, 255, 255, 0.15);
-            color: #4fa3a5;
+            color: #2F5F63;
             padding-right: 40px;
         }
 
@@ -540,9 +550,25 @@
 
             .btn-custom-outline {
                 padding: 15px 10px;
-                margin-top: 0px;
+                margin-top: 4px;
                 font-size: 13px;
                 letter-spacing: 1px;
+            }
+
+            /* Intro section: match mobile spacing (text closer to CTA) */
+            .intro-section .body-text {
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+                margin-bottom: 0 !important;
+            }
+
+            .intro-section .body-text p {
+                margin-bottom: 16px !important;
+            }
+
+            .intro-section .btn-custom-outline {
+                margin-top: 14px !important;
+                margin-bottom: 18px !important;
             }
 
             .main-heading-teal {
@@ -618,6 +644,47 @@
                 margin-top: 0px;
                 /* 🔑 spacing after image */
                 padding: 20px;
+            }
+
+            /* Mobile-only: override index-only Amenities padding so it matches Residences/Hotel */
+            #amenities .slider-text-card {
+                padding-top: 20px !important;
+                padding-bottom: 20px !important;
+            }
+
+            /* Mobile: keep consistent title spacing (Residences / Hotel / Amenities) */
+            .slider-text-card .card-title-teal {
+                margin-top: 6px !important;
+                margin-bottom: 16px !important;
+            }
+
+            /* Mobile: consistent spacing around CTA buttons in these cards */
+            .slider-text-card .card-text {
+                margin-bottom: 16px !important;
+            }
+
+            .slider-text-card .amenities-list {
+                margin-top: 0 !important;
+                margin-bottom: 16px !important;
+            }
+
+            .slider-text-card :is(.btn-gold-link, .btn.btn-gold-link) {
+                margin-top: 14px !important;
+                margin-bottom: 8px !important;
+            }
+
+            /* Mobile: Amenities must match Hotel/Residences spacing exactly */
+            #amenities .slider-text-card .amenities-list {
+                margin-bottom: 16px !important;
+            }
+
+            #amenities .slider-text-card .amenities-list li:last-child {
+                margin-bottom: 0 !important;
+            }
+
+            #amenities .slider-text-card .btn.btn-gold-link {
+                margin-top: 14px !important;
+                margin-bottom: 8px !important;
             }
 
             .carousel-indicators.custom-dots {
@@ -773,8 +840,43 @@
 
             .intro-section {
                 padding: 0px 20px;
-                padding-top: 20px;
+                padding-top: 18px;
                 padding-bottom: 10px;
+            }
+
+            /* Add a little breathing room between hero and intro (mobile only) */
+            .hero-section {
+                margin-bottom: 12px;
+            }
+
+            /* Intro section mobile typography to match reference */
+            .intro-section .central-head-text {
+                max-width: 360px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .intro-section .sub-heading-small {
+                font-size: 14px !important;
+                line-height: 1.25 !important;
+                letter-spacing: 0.02em !important;
+                margin-bottom: 14px !important;
+            }
+
+            .intro-section .intro-heading-angleton,
+            .intro-section .intro-heading-angleton .intro-line1,
+            .intro-section .intro-heading-angleton .intro-line2,
+            .intro-section .intro-heading-angleton .intro-line3 {
+                font-size: 18px !important;
+                line-height: 1.15 !important;
+                margin-bottom: 12px;
+            }
+
+            .intro-section .body-text p {
+                font-size: 14px !important;
+                line-height: 1.65 !important;
+                text-align: center !important;
+                margin-bottom: 14px !important;
             }
 
             .body-text {
@@ -813,7 +915,13 @@
 
         /* Homepage header — matches brand bar (phone + social | centered logo stack | menu) */
         body.page-home {
-            padding-top: 108px;
+            padding-top: 138px;
+        }
+
+        @media (max-width: 767px) {
+            body.page-home {
+                padding-top: 100px;
+            }
         }
 
         body.page-home .hero-section {
@@ -822,10 +930,10 @@
 
         .site-header--cream {
             background-color: #F0ECE4 !important;
-            min-height: 0;
+            min-height: 120px;
             height: auto !important;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 22px;
+            padding-bottom: 22px;
         }
 
         .site-header--cream .header-inner {
@@ -892,13 +1000,15 @@
             display: inline-block;
             line-height: 0;
             text-align: center;
+            margin-top: 14px;
+            margin-bottom: -4px;
         }
 
         .site-header--cream .header-main-logo {
             display: block;
             height: auto;
             width: auto;
-            max-height: 78px;
+            max-height: 92px;
             max-width: min(380px, 52vw);
             object-fit: contain;
         }
@@ -935,10 +1045,64 @@
 
         /* Mobile: slightly smaller Menu text */
         @media (max-width: 767px) {
+            .site-header--cream {
+                min-height: 92px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .site-header--cream .header-inner {
+                justify-content: space-between !important;
+            }
+
+            .site-header--cream .header-main-logo {
+                max-height: 63.83px;
+                max-width: 160px;
+                object-position: left;
+                transform: translateX(-42px);
+            }
+
+            .site-header--cream .header-brand-stack {
+                margin-top: 2px;
+                margin-bottom: 0;
+            }
+
+            /* Mobile: hide empty left area so logo can sit left */
+            .site-header--cream .header-contact {
+                display: none !important;
+            }
+
+            /* Mobile: logo should be on the left (like Figma) */
+            .site-header--cream .header-logo-center {
+                justify-content: flex-start !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                flex: 0 0 auto !important;
+                flex-grow: 0 !important;
+            }
+
+            .site-header--cream .header-brand-stack {
+                text-align: left !important;
+                margin-left: 0 !important;
+                transform: translateX(0);
+            }
+
+            /* Mobile: smart side padding like the screenshot */
+            .site-header--cream .container-fluid {
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }
+
             .site-header--cream .hamburger-btn {
                 font-size: 14px;
-                padding: 4px 6px;
+                padding: 4px 4px;
             }
+        }
+
+        /* Menu button hover color (desktop + mobile) */
+        .site-header--cream .hamburger-btn:hover,
+        .site-header--cream .hamburger-btn:focus-visible {
+            color: #2F5F63 !important;
         }
 
         /* Mobile: tighten side-nav spacing + text size */
@@ -1008,7 +1172,13 @@
         }
 
         #amenities .amenities-list {
-            margin-bottom: 10px;
+            /* Match spacing above buttons in Residences/Hotel (p.card-text has 20px bottom margin) */
+            margin-bottom: 20px;
+        }
+
+        /* Keep button spacing consistent in Amenities */
+        #amenities .btn-gold-link {
+            margin-top: 0;
         }
 
         #amenities .amenities-list li {
@@ -1141,6 +1311,29 @@
         #paradiseFormModal .form-input {
             color: #2B2B2B !important;
             border-bottom-color: #2F5F63 !important;
+        }
+
+        /* Contact popup: make placeholder text match other inputs */
+        #paradiseFormModal .form-input::placeholder {
+            color: #2B2B2B !important;
+            opacity: 1;
+        }
+
+        /* Contact popup (#paradiseFormModal): custom dropdown arrow color (Figma) */
+        #paradiseFormModal select.form-input {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            padding-right: 46px;
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 22px 22px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6' fill='none' stroke='%23D88C7A' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        }
+
+        /* Hide default arrow in old Edge/IE */
+        #paradiseFormModal select.form-input::-ms-expand {
+            display: none;
         }
 
         #paradiseFormModal .form-input:focus {
@@ -1683,7 +1876,7 @@ select.form-input {
                 </div>
                 <div class="header-logo-center flex-grow-1 d-flex justify-content-center px-2">
                     <a href="./index.html" class="text-decoration-none d-inline-block header-brand-stack">
-                        <img src="images/home-logo.png"
+                        <img src="images/logo full.svg"
                             alt="Paradise Breeze — Curio Collection by Hilton" class="header-main-logo img-fluid">
                     </a>
                 </div>
@@ -1729,8 +1922,8 @@ select.form-input {
                 <div class="col-lg-10 col-xl-9 text-center central-head-text">
                     <h4 class="sub-heading-small">A NEW EXPRESSION OF HOSPITALITY IN THE BAHAMAS</h4>
                     <h2 class="main-heading-teal intro-heading-angleton">
-                        <span class="intro-line1">INTRODUCING PARADISE BREEZE NASSAU</span>
-                        <span class="intro-line3">CURIO COLLECTION BY HILTON</span>
+                        <span class="intro-line1">INTRODUCING PARADISE BREEZE NASSAU
+                        <span class="intro-line3"> CORIO COLLECTION BY HILTON</span>
                     </h2>
 
                     <div class="body-text">
@@ -1748,7 +1941,7 @@ select.form-input {
                         Now selling.</p>
                     </div>
                     <a href="#" class="btn-custom-outline" data-bs-toggle="modal" data-bs-target="#paradiseFormModal">
-                        OWN A PIECE OF PARADISE <span class="arrow-color"> &rarr; </span>
+                        OWN YOUR PLACE IN PARADISE <span class="arrow-color"> &rarr; </span>
                     </a>
                 </div>
             </div>
@@ -1828,7 +2021,7 @@ select.form-input {
     <section id="selling" class="selling-text-section">
         <div class="container text-center">
             <h4 class="sub-heading-teal-selling">SELLING NOW</h4>
-            <h2 class="main-heading-teal-selling mb-4">OWN A PIECE OF PARADISE</h2>
+            <h2 class="main-heading-teal-selling mb-4">OWN YOUR PLACE IN PARADISE</h2>
 
             <a href="#" class="btn-outline-gold" data-bs-toggle="modal" data-bs-target="#paradiseFormModal">
                 CONTACT SALES <span class="arrow-color">&rarr;</span>
@@ -1837,9 +2030,11 @@ select.form-input {
     </section>
 
     <section class="social-grid-section">
-        <div class="container-fluid px-lg-5">
+        <div class="container-fluid ">
             <div class="social-block">
-                <img src="images/Frame 59.png" class="img-fluid" alt="insta username">
+                <img src="images/Group.png" class="social-star" alt="" aria-hidden="true">
+                <div class="social-handle">@PARADISEBREEZEBAHAMAS</div>
+                <img src="images/Group.png" class="social-star" alt="" aria-hidden="true">
             </div>
 
             <div class="social-scroll-wrapper">

@@ -93,6 +93,30 @@
         text-align: center !important;
     }
 
+    /* Give header more vertical space (like index.html) */
+    body.privacy-policy-page .site-new-header,
+    body.terms-and-conditions-page .site-new-header,
+    body.legal-disclaimer-page .site-new-header {
+        padding-top: 26px !important;
+        padding-bottom: 18px !important;
+    }
+
+    /* Remove extra top margin so logo sits nicely */
+    body.privacy-policy-page .header-new-left,
+    body.terms-and-conditions-page .header-new-left,
+    body.legal-disclaimer-page .header-new-left {
+        margin-top: 0 !important;
+    }
+
+    @media (max-width: 767px) {
+        body.privacy-policy-page .site-new-header,
+        body.terms-and-conditions-page .site-new-header,
+        body.legal-disclaimer-page .site-new-header {
+            padding-top: 20px !important;
+            padding-bottom: 14px !important;
+        }
+    }
+
     /* Smaller header logo on legal pages */
     body.privacy-policy-page .general-logo,
     body.terms-and-conditions-page .general-logo,
