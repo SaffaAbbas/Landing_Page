@@ -1,0 +1,2566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradise Breeze Nassau</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @font-face {
+            font-family: "TAN-Angleton";
+            src: url("./fonts/TAN-Angleton-Regular.ttf") format("truetype");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        html,
+        body {
+            /* font-family: 'Nunito'; */
+            font-family: 'Neue Montreal', sans-serif;
+            color: #69443C;
+            margin: 0;
+            padding: 0;
+            background-color: #F0ECE4 !important;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 800px;
+            overflow: hidden;
+        }
+
+        .img-logo {
+            height: 100px;
+        }
+
+        /* Video fills entire section */
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+
+
+        }
+
+        .hero-video::-webkit-media-controls {
+            display: none !important;
+        }
+
+        .hero-video::-webkit-media-controls-play-button {
+            display: none !important;
+        }
+
+        .hero-video::-webkit-media-controls-start-playback-button {
+            display: none !important;
+        }
+
+        /* Overlay improves text readability */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.35);
+            z-index: 2;
+        }
+
+        .modal-form-heading {
+            text-align: center;
+            /* white-space: nowrap; */
+            /* margin: 0 auto; */
+        }
+
+        @media (max-width: 767px) {
+            .modal-form-heading {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .modal-form-heading {
+                padding: 0 !important;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+                width: 100%;
+                white-space: nowrap;
+            }
+        }
+
+        /* Content stays above video */
+        .hero-section .container {
+            z-index: 3;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 600px;
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 20%;
+            left: 0;
+            right: 0;
+            z-index: 3;
+        }
+
+
+        /* Headings styling */
+        .hero-title {
+            font-family: "TAN-Angleton";
+            color: #fff;
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 1px;
+        }
+
+        .hero-subtitle {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .sub-heading-small {
+            font-family: 'Public Sans', sans-serif;
+            font-weight: 300;
+            font-style: normal;
+            font-size: 20px;
+            line-height: 120%;
+            letter-spacing: 0%;
+            text-align: center;
+            text-transform: uppercase;
+            color: #2F7F86;
+            letter-spacing: 0px;
+        }
+
+        .main-heading-teal {
+            font-family: "TAN-Angleton";
+            font-weight: 400;
+            font-style: Regular;
+            font-size: 28px;
+            line-height: 130%;
+            letter-spacing: 0%;
+            text-align: center;
+            text-transform: uppercase;
+            margin-left: 100px;
+            width: 78%;
+
+        }
+
+        /* Intro H2: match Figma sequence + Tan - Angleton (if available) */
+        .intro-heading-angleton {
+            font-family: "TAN-Angleton", serif;
+            font-size: 32px;
+        }
+
+        .intro-heading-angleton .intro-line1,
+        .intro-heading-angleton .intro-line2,
+        .intro-heading-angleton .intro-line3 {
+            display: block;
+            font-size: 32px;
+        }
+
+        /* Index-only: apply Tan-Angleton to homepage headings */
+        #residences .card-title-teal,
+        #hotel .card-title-teal,
+        #amenities .card-title-teal,
+        .selling-text-section .main-heading-teal-selling {
+            font-family: "TAN-Angleton" !important;
+            font-weight: 400 !important;
+        }
+
+        /* Keep homepage heading sizes same as before (font metrics differ) */
+        .hero-title {
+            font-size: 36px !important;
+            line-height: 130% !important;
+        }
+
+        .intro-heading-angleton {
+            font-size: 32px !important;
+            line-height: 130% !important;
+        }
+
+        #residences .card-title-teal,
+        #hotel .card-title-teal,
+        #amenities .card-title-teal {
+            font-size: 20px !important;
+        }
+
+        .selling-text-section .main-heading-teal-selling {
+            font-size: 32px !important;
+            line-height: 140% !important;
+        }
+
+        /* Mobile: compensate Tan-Angleton visual size */
+        @media (max-width: 767px) {
+            .hero-title {
+                font-size: 1.7rem !important;
+                line-height: 1.2 !important;
+            }
+
+            .selling-text-section .main-heading-teal-selling {
+                font-size: 20px !important;
+                line-height: 1.2 !important;
+            }
+
+            /* Intro block: same size as Residences / The Hotel / Amenities titles on mobile */
+            .intro-section .intro-heading-angleton,
+            .intro-section .main-heading-teal.intro-heading-angleton,
+            .intro-heading-angleton,
+            .intro-section .intro-heading-angleton .intro-line1,
+            .intro-section .intro-heading-angleton .intro-line3,
+            .intro-heading-angleton .intro-line1,
+            .intro-heading-angleton .intro-line2,
+            .intro-heading-angleton .intro-line3 {
+                font-size: 18px !important;
+                line-height: 1.25 !important;
+            }
+        }
+
+        /* Extra safety for very small screens */
+        @media (max-width: 575px) {
+            .intro-section .intro-heading-angleton,
+            .intro-section .intro-heading-angleton .intro-line1,
+            .intro-section .intro-heading-angleton .intro-line2,
+            .intro-section .intro-heading-angleton .intro-line3 {
+                font-size: 18px !important;
+            }
+        }
+
+        .body-text {
+            font-family: 'Neue Montreal', sans-serif;
+            font-weight: 400;
+            font-style: Regular;
+            font-size: 18px;
+            line-height: 150%;
+            letter-spacing: 0%;
+            text-align: center;
+            padding: 20px;
+
+        }
+
+        @media (max-width: 767px) {
+            .body-text p {
+                font-family: 'Neue Montreal', sans-serif;
+                font-size: 15px;
+                /* mobile readable */
+                line-height: 1.4;
+                /* airy like image */
+                color: #69443C;
+                font-weight: 400;
+                letter-spacing: 0.2px;
+                margin-bottom: 16px;
+            }
+        }
+
+        .slider-image-area {
+            position: relative;
+        }
+
+        /* Side navigation on the right */
+        .side-nav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            right: 0;
+            background-color: #F0ECE4;
+            overflow-x: hidden;
+            transition: 0.4s ease;
+            padding-top: 80px;
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .side-nav-content {
+            margin-top: 60px;
+            /* neeche lane ke liye */
+            padding-right: 30px;
+            /* right side shift */
+            padding-left: 10px;
+            /* thoda space left se */
+        }
+
+
+
+        .side-nav-content a {
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #2B2B2B;
+            display: block;
+            text-align: right;
+            font-family: 'Public Sans', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .side-nav-content a:hover {
+            text-decoration: underline;
+            /* Dark gray on hover, optional */
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #2F5F63;
+            padding-right: 40px;
+        }
+
+        .side-nav-content a:active,
+
+        /* Keyboard focus */
+        .side-nav-content a:focus {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #2F5F63;
+            text-decoration: underline;
+        }
+
+        .side-nav-content a:hover,
+        .side-nav-content a:active,
+        .side-nav-content a:focus,
+        .side-nav-content a:focus-visible {
+            text-decoration: underline;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #2F5F63;
+            padding-right: 40px;
+        }
+
+        /* Desktop: slightly tighter menu link spacing */
+        @media (min-width: 768px) {
+            .side-nav-content {
+                margin-top: 48px;
+                padding-right: 22px;
+                padding-left: 8px;
+            }
+
+            .side-nav-content a {
+                padding: 10px 16px;
+                line-height: 1.35;
+            }
+
+            .side-nav-content a:hover,
+            .side-nav-content a:active,
+            .side-nav-content a:focus,
+            .side-nav-content a:focus-visible {
+                padding-right: 32px;
+            }
+        }
+
+        .menu-btn {
+            background: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .menu-btn.text-active {
+            color: #d1b183;
+        }
+
+        .menu-btn.text-active {
+            background: #fff;
+        }
+
+
+        .social-img-wrapper {
+            width: 100%;
+            height: 460px;
+            border: 1px solid #CBBFAE;
+            box-sizing: border-box;
+        }
+
+        .social-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        /* Overlay */
+        .social-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-right: 80px;
+        }
+
+        /* Instagram Icon */
+        .social-overlay i {
+            font-size: 40px;
+            color: #fff;
+        }
+
+        @media (min-width: 992px) {
+            .social-img-wrapper:hover .social-overlay {
+                opacity: 1;
+            }
+        }
+
+
+        /* Hover Effects */
+        .social-img-wrapper:hover .social-overlay {
+            opacity: 1;
+        }
+
+        .social-img-wrapper:hover .social-img {
+            transform: scale(1.05);
+        }
+
+        .social-img-wrapper {
+            position: relative;
+        }
+
+        @media (max-width: 991px) {
+            .social-overlay {
+                opacity: 1;
+                background: rgba(0, 0, 0, 0.25);
+            }
+
+            .social-overlay a {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                /* TRUE CENTER */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .social-overlay i {
+                font-size: 2.2rem;
+                color: #fff;
+            }
+        }
+
+
+        @media (max-width: 991px) {
+            .social-overlay {
+                opacity: 1;
+                /* always visible on mobile */
+                background: rgba(0, 0, 0, 0.25);
+                /* optional soft overlay */
+            }
+
+            .social-overlay i {
+                font-size: 2.2rem;
+                color: #fff;
+            }
+        }
+
+
+
+        .paradise-modal {
+            border-radius: 8px;
+            padding-top: 20px;
+        }
+
+        .paradise-title {
+            color: #4fa3a5;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .form-control,
+        .form-select {
+            border: none;
+            border-bottom: 1px solid #9cced0;
+            border-radius: 0;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            box-shadow: none;
+            border-bottom-color: #4fa3a5;
+        }
+
+        .paradise-submit {
+            border: 1px solid #d2a679;
+            color: #d2a679;
+            background: transparent;
+            text-transform: uppercase;
+        }
+
+        .paradise-submit:hover {
+            background: #d2a679;
+            color: #fff;
+        }
+
+        .form-modal {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        @media (min-width: 767.98px) {
+            .custom-arrows.right-aligned {
+                left: auto;
+                right: 40px;
+            }
+        }
+
+        .social-scroll-wrapper .row.gx-4 {
+            --bs-gutter-x: 0.75rem;
+            gap: 0.75rem 0.75rem;
+        }
+
+        @media (max-width: 767.98px) {
+
+            .hero-title {
+                font-weight: 400;
+                font-style: normal;
+                font-size: 20px !important;
+                line-height: 110.00000000000001%;
+                letter-spacing: 0%;
+                text-transform: uppercase;
+
+            }
+
+            .btn-custom-outline {
+                padding: 15px 10px;
+                margin-top: 4px;
+                font-size: 13px;
+                letter-spacing: 1px;
+            }
+
+            /* Intro section: match mobile spacing (text closer to CTA) */
+            .intro-section .body-text {
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+                margin-bottom: 0 !important;
+            }
+
+            .intro-section .body-text p {
+                margin-bottom: 16px !important;
+            }
+
+            .intro-section .btn-custom-outline {
+                margin-top: 14px !important;
+                margin-bottom: 18px !important;
+            }
+
+            .main-heading-teal {
+                 font-family: "TAN-Angleton";
+                font-weight: 400;
+                font-style: normal;
+                font-size: 28px;
+                line-height: 130%;
+                letter-spacing: 0%;
+                text-align: center;
+                text-transform: uppercase;
+                margin-left: 20px;
+                width: 90%;
+
+            }
+
+            .main-heading-teal,
+            .main-heading-teal span {
+                 font-family: "TAN-Angleton";
+            }
+
+            .sub-heading-small {
+                font-weight: 400;
+                font-style: normal;
+                font-size: 20px !important;
+                line-height: 120%;
+                letter-spacing: 0%;
+                text-align: center;
+                text-transform: uppercase;
+
+            }
+
+            .overlay.mobile-only {
+                position: fixed;
+                top: var(--header-height, 72px);
+                /* below header */
+                left: 0;
+                width: 100%;
+                height: calc(100vh - var(--header-height, 72px));
+                background: #fff;
+                z-index: 1050;
+                display: none;
+            }
+
+            .overlay.mobile-only.active {
+                display: block;
+            }
+
+            .overlay-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 100%;
+                margin-top: 100px;
+            }
+
+            .overlay-content a {
+                font-size: 20px;
+                color: #000;
+                text-decoration: none;
+            }
+
+            .slider-wrapper {
+                flex-direction: column;
+            }
+
+            .slider-image-area,
+            .slider-text-card {
+                width: 100%;
+            }
+
+            .slider-text-card {
+                margin-top: 0px;
+                /* 🔑 spacing after image */
+                padding: 20px;
+            }
+
+            /* Mobile-only: override index-only Amenities padding so it matches Residences/Hotel */
+            #amenities .slider-text-card {
+                padding-top: 20px !important;
+                padding-bottom: 20px !important;
+            }
+
+            /* Mobile: keep consistent title spacing (Residences / Hotel / Amenities) */
+            .slider-text-card .card-title-teal {
+                margin-top: 6px !important;
+                margin-bottom: 16px !important;
+            }
+
+            /* Mobile: consistent spacing around CTA buttons in these cards */
+            .slider-text-card .card-text {
+                margin-bottom: 16px !important;
+            }
+
+            .slider-text-card .amenities-list {
+                margin-top: 0 !important;
+                margin-bottom: 16px !important;
+            }
+
+            .slider-text-card :is(.btn-gold-link, .btn.btn-gold-link) {
+                margin-top: 14px !important;
+                margin-bottom: 8px !important;
+            }
+
+            /* Mobile: Amenities must match Hotel/Residences spacing exactly */
+            #amenities .slider-text-card .amenities-list {
+                margin-bottom: 16px !important;
+            }
+
+            #amenities .slider-text-card .amenities-list li:last-child {
+                margin-bottom: 0 !important;
+            }
+
+            #amenities .slider-text-card .btn.btn-gold-link {
+                margin-top: 14px !important;
+                margin-bottom: 8px !important;
+            }
+
+            .carousel-indicators.custom-dots {
+                top: auto;
+                /* IMPORTANT: reset top */
+                bottom: 10px;
+                /* move to bottom */
+                left: auto;
+                right: 10px;
+                transform: none;
+                margin: 0;
+            }
+
+            .custom-arrows.right-aligned {
+                right: 40px;
+            }
+
+            .custom-arrows {
+                position: absolute;
+                bottom: 10px;
+                left: 15px;
+                display: flex;
+                gap: 10px;
+                z-index: 20;
+            }
+
+
+            .carousel-indicators.custom-dots button {
+                margin: 0 4px;
+                /* horizontal spacing */
+            }
+
+            .social-scroll-wrapper {
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .social-scroll-wrapper .row {
+                flex-wrap: nowrap;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .social-scroll-wrapper .col-12 {
+                flex: 0 0 100%;
+                max-width: 100%;
+                scroll-snap-align: start;
+            }
+
+            /* Hide scrollbar */
+            .social-scroll-wrapper::-webkit-scrollbar {
+                display: none;
+            }
+
+            .social-p {
+                padding: 0px;
+            }
+
+            .social-img-wrapper {
+                height: 352px;
+            }
+
+            .site-logo {
+                height: 80px;
+            }
+
+            .site-header .container-fluid {
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }
+
+            .main-heading-teal-selling {
+                font-family: "TAN-Angleton" !important;
+                font-weight: 500;
+                font-style: Medium;
+                font-size: 32px;
+                line-height: 140%;
+                letter-spacing: 0%;
+                text-align: center;
+                text-transform: uppercase;
+
+            }
+
+            .sub-heading-teal-selling {
+                font-family: 'Neue Montreal', sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 20px;
+                line-height: 140%;
+                letter-spacing: 0%;
+                text-transform: uppercase;
+
+
+            }
+
+            /* Hero section must use viewport height on mobile */
+            .hero-section {
+                position: relative;
+                overflow: hidden;
+                height: 400px;
+                max-height: 60vh;
+            }
+
+            /* Background video fix for iOS / Android */
+            .hero-video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 1;
+            }
+
+            /* Overlay always above video */
+            .hero-overlay {
+                position: absolute;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.35);
+                z-index: 2;
+            }
+
+            /* Content must not be absolutely positioned on mobile */
+            .hero-content {
+                position: relative;
+                z-index: 3;
+                padding-bottom: 2rem;
+                text-align: center;
+            }
+
+            /* Ensure Bootstrap container stacks correctly */
+            .hero-section .container {
+                position: relative;
+                z-index: 3;
+            }
+
+            /* Typography scaling for mobile */
+            .hero-title {
+                font-size: 1.8rem;
+                line-height: 1.2;
+            }
+
+            .card-title-teal {
+                margin-bottom: 15px;
+            }
+
+
+            .slider-section-container {
+                padding-bottom: 10px;
+                padding-top: 10px;
+            }
+
+            .intro-section {
+                padding: 0px 20px;
+                padding-top: 18px;
+                padding-bottom: 10px;
+            }
+
+            /* Add a little breathing room between hero and intro (mobile only) */
+            .hero-section {
+                margin-bottom: 12px;
+            }
+
+            /* Intro section mobile typography to match reference */
+            .intro-section .central-head-text {
+                max-width: 360px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .intro-section .sub-heading-small {
+                font-size: 14px !important;
+                line-height: 1.25 !important;
+                letter-spacing: 0.02em !important;
+                margin-bottom: 22px !important;
+            }
+
+            .intro-section .intro-heading-angleton,
+            .intro-section .intro-heading-angleton .intro-line1,
+            .intro-section .intro-heading-angleton .intro-line2,
+            .intro-section .intro-heading-angleton .intro-line3 {
+                font-size: 18px !important;
+                line-height: 1.15 !important;
+                margin-bottom: 20px !important;
+            }
+
+            .intro-section .body-text p {
+                font-size: 16px !important;
+                line-height: 1.65 !important;
+                text-align: center !important;
+                margin-bottom: 14px !important;
+            }
+
+            .body-text {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+
+            .form-section {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+
+            .hero-content {
+                position: absolute;
+                bottom: 0%;
+                left: 0;
+                right: 0;
+                z-index: 3;
+                text-align: left;
+            }
+
+
+
+        }
+
+        @media(min-width: 2040px) {
+            .central-head-text {
+                width: 50%;
+            }
+
+            .hero-section {
+                position: relative;
+                height: 100%;
+            }
+        }
+
+        /* Homepage header — matches brand bar (phone + social | centered logo stack | menu) */
+        body.page-home {
+            padding-top: 138px;
+        }
+
+        @media (max-width: 767px) {
+            body.page-home {
+                padding-top: 100px;
+            }
+        }
+
+        body.page-home .hero-section {
+            margin-top: 0 !important;
+        }
+
+        .site-header--cream {
+            background-color: #F0ECE4 !important;
+            min-height: 120px;
+            height: auto !important;
+            padding-top: 22px;
+            padding-bottom: 22px;
+        }
+
+        .site-header--cream .header-inner {
+            position: relative;
+            min-height: 0;
+            gap: 0.65rem;
+        }
+
+        .site-header--cream .header-contact {
+            gap: 0;
+        }
+
+        .site-header--cream .header-phone {
+            color: #8E7761;
+            text-decoration: none;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9375rem;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+
+        .site-header--cream .header-phone:hover {
+            color: #5A8E94;
+        }
+
+        .site-header--cream .header-contact-divider {
+            display: inline-block;
+            width: 1px;
+            height: 18px;
+            background: #B8926A;
+            margin: 0 14px;
+            flex-shrink: 0;
+        }
+
+        .site-header--cream .header-social {
+            gap: 14px;
+        }
+
+        .site-header--cream .header-social a {
+            color: #8E7761;
+            font-size: 1.15rem;
+            line-height: 1;
+        }
+
+        .site-header--cream .header-social a:hover {
+            color: #5A8E94;
+        }
+
+        /* Plain “f” mark — no circle (Bootstrap’s bi-facebook is a filled badge) */
+        .site-header--cream .header-social a.header-social-fb {
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+        }
+
+        .site-header--cream .header-social-fb-svg {
+            display: block;
+            height: 1.05em;
+            width: calc(1.05em * 320 / 512);
+            flex-shrink: 0;
+        }
+
+        .site-header--cream .header-brand-stack {
+            display: inline-block;
+            line-height: 0;
+            text-align: center;
+            margin-top: 14px;
+            margin-bottom: -4px;
+        }
+
+        .site-header--cream .header-main-logo {
+            display: block;
+            height: auto;
+            width: auto;
+            max-height: 92px;
+            max-width: min(380px, 52vw);
+            object-fit: contain;
+        }
+
+        /* Header menu button: text (Menu / Close) */
+        .site-header--cream .hamburger-btn {
+            font-family: 'Public Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 0;
+            text-transform: none;
+            color: #8E7761 !important;
+            padding: 8px 10px;
+            background: transparent !important;
+            box-shadow: none !important;
+            border: 0 !important;
+        }
+
+        .site-header--cream .hamburger-btn .menu-label {
+            display: inline !important;
+        }
+
+        .site-header--cream .hamburger-btn .close-label {
+            display: none !important;
+        }
+
+        .site-header--cream .hamburger-btn.active .menu-label {
+            display: inline !important;
+        }
+
+        .site-header--cream .hamburger-btn.active .close-label {
+            display: none !important;
+        }
+
+        /* Mobile: slightly smaller Menu text */
+        @media (max-width: 767px) {
+            .site-header--cream {
+                min-height: 92px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .site-header--cream .header-inner {
+                justify-content: space-between !important;
+            }
+
+            .site-header--cream .header-main-logo {
+                max-height: 63.83px;
+                max-width: 160px;
+                object-position: left;
+                transform: translateX(-42px);
+            }
+
+            .site-header--cream .header-brand-stack {
+                margin-top: 2px;
+                margin-bottom: 0;
+            }
+
+            /* Mobile: hide empty left area so logo can sit left */
+            .site-header--cream .header-contact {
+                display: none !important;
+            }
+
+            /* Mobile: logo should be on the left (like Figma) */
+            .site-header--cream .header-logo-center {
+                justify-content: flex-start !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                flex: 0 0 auto !important;
+                flex-grow: 0 !important;
+            }
+
+            .site-header--cream .header-brand-stack {
+                text-align: left !important;
+                margin-left: 0 !important;
+                transform: translateX(0);
+            }
+
+            /* Mobile: smart side padding like the screenshot */
+            .site-header--cream .container-fluid {
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }
+
+            .site-header--cream .hamburger-btn {
+                font-size: 14px;
+                padding: 4px 4px;
+            }
+        }
+
+        /* Menu button hover color (desktop + mobile) */
+        .site-header--cream .hamburger-btn:hover,
+        .site-header--cream .hamburger-btn:focus-visible {
+            color: #2F5F63 !important;
+        }
+
+        /* Mobile: tighten side-nav spacing + text size */
+        @media (max-width: 767px) {
+            .side-nav {
+                padding-top: 78px;
+            }
+
+            .side-nav-content {
+                margin-top: 28px;
+                padding-right: 6px;
+                padding-left: 0;
+            }
+
+            .side-nav-content a {
+                font-size: 15px;
+                line-height: 1.25;
+                padding: 5px 4px;
+            }
+
+            /* Don’t expand padding on hover/focus on mobile (keeps text tight) */
+            .side-nav-content a:hover,
+            .side-nav-content a:active,
+            .side-nav-content a:focus,
+            .side-nav-content a:focus-visible {
+                padding-right: 4px !important;
+            }
+        }
+
+        /* Safety: if any global hamburger span styles apply, neutralize */
+        .site-header--cream .hamburger-btn span {
+            background: none !important;
+            width: auto !important;
+            height: auto !important;
+            margin: 0 !important;
+            position: static !important;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        /* Index-only: slider text (Residences / Hotel / Amenities) color */
+        #residences .slider-text-card,
+        #hotel .slider-text-card,
+        #amenities .slider-text-card {
+            color: #2B2B2B;
+        }
+
+        #residences .slider-text-card .card-text,
+        #hotel .slider-text-card .card-text,
+        #amenities .slider-text-card .card-text,
+        #amenities .slider-text-card .amenities-list,
+        #amenities .slider-text-card .amenities-list li {
+            color: #2B2B2B !important;
+        }
+
+        /* Index-only: slider text-card background (Residences / Hotel / Amenities) */
+        #residences .slider-text-card,
+        #hotel .slider-text-card,
+        #amenities .slider-text-card {
+            background-color: #F6F1EA !important;
+        }
+
+        /* Index-only: reduce Amenities block height to match above sections */
+        #amenities .slider-text-card {
+            padding-top: 45px;
+            padding-bottom: 40px;
+        }
+
+        #amenities .amenities-list {
+            /* Match spacing above buttons in Residences/Hotel (p.card-text has 20px bottom margin) */
+            margin-bottom: 20px;
+        }
+
+        /* Keep button spacing consistent in Amenities */
+        #amenities .btn-gold-link {
+            margin-top: 0;
+        }
+
+        #amenities .amenities-list li {
+            margin-bottom: 6px;
+            line-height: 1.25;
+        }
+
+        #amenities .amenities-list li::marker {
+            color: #2B2B2B;
+            font-size: 1.15em;
+        }
+
+        /* styles.css uses custom bullets via ::before */
+        #amenities .amenities-list li::before {
+            color: #2B2B2B !important;
+        }
+
+        /* Index-only: make inner slider section background match body */
+        #residences.slider-section-container,
+        #hotel.slider-section-container,
+        #amenities.slider-section-container {
+            background-color: #F0ECE4 !important;
+        }
+
+        /* Index-only: intro section background match body */
+        .intro-section {
+            background-color: #F0ECE4;
+        }
+
+        /* Index-only: intro paragraph text color */
+        .intro-section .body-text p {
+            color: #2B2B2B !important;
+        }
+
+        /* Index-only: Public Sans for body text (not headings) */
+        body.page-home :is(p, li, .card-text, .amenities-list li, .footer a, .footer p, .footer li) {
+            font-family: 'Public Sans', sans-serif !important;
+            font-weight: 400;
+        }
+
+        /* Index-only: button text color (no hover changes) */
+        .btn-gold-link,
+        .btn.btn-gold-link,
+        .btn-gold-link1,
+        .btn-outline-gold {
+            color: #2F5F63 !important;
+        }
+
+        /* Index-only: all button text uses Public Sans */
+        :is(.btn-gold-link, .btn.btn-gold-link, .btn-gold-link1, .btn-outline-gold, .btn-custom-outline, .submit-btn) {
+            font-family: 'Public Sans', sans-serif !important;
+        }
+
+        /* Index-only: keep button hover text white */
+        .btn-gold-link:hover,
+        .btn.btn-gold-link:hover {
+            color: #fff !important;
+        }
+
+        /* Index-only: default arrow color */
+        .arrow-color {
+            color: #D88C7A !important;
+        }
+
+        /* Index-only: on hover, arrow becomes white too */
+        :is(.btn-gold-link, .btn.btn-gold-link, .btn-custom-outline, .btn-outline-gold):hover .arrow-color {
+            color: #fff !important;
+        }
+
+        /* Index-only: CONTACT SALES hover text white */
+        .btn-outline-gold:hover {
+            color: #fff !important;
+        }
+
+        /* Index-only: modal submit button matches other buttons */
+        .submit-btn {
+            border: 1px solid #D4B278;
+            color: #2F5F63 !important;
+            background: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Public Sans', sans-serif;
+            font-size: 14px;
+            padding: 12px 30px;
+            border-radius: 0;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn .arrow-color {
+            color: #D88C7A !important;
+            font-size: 1.7em;
+            line-height: 1;
+            margin-left: 8px;
+        }
+
+        .submit-btn:hover {
+            background-color: #3395A0;
+            border-color: #3395A0;
+            color: #fff !important;
+        }
+
+        .submit-btn:hover .arrow-color {
+            color: #fff !important;
+        }
+
+        /* Index-only: bigger arrows inside buttons/links */
+        :is(.btn-gold-link, .btn.btn-gold-link, .btn-custom-outline, .btn-outline-gold) .arrow-color {
+            display: inline-block;
+            font-size: 1.55em;
+            line-height: 1;
+            margin-left: 6px;
+            transform: translateY(1px);
+        }
+
+        /* Contact popup (#paradiseFormModal): match index heading font + teal */
+        #paradiseFormModal .form-heading.modal-form-heading {
+            color: #2F5F63 !important;
+            font-family: "TAN-Angleton", serif !important;
+            font-weight: 400 !important;
+            font-size: 20px !important;
+            line-height: 1.25 !important;
+        }
+
+        /* Contact popup (#paradiseFormModal): modal background */
+        #paradiseFormModal .modal-content {
+            background-color: #F6F1EA !important;
+        }
+
+        /* Contact popup (#paradiseFormModal): input text color */
+        #paradiseFormModal .form-input {
+            color: #2B2B2B !important;
+            border-bottom-color: #2F5F63 !important;
+        }
+
+        /* Contact popup: make placeholder text match other inputs */
+        #paradiseFormModal .form-input::placeholder {
+            color: #2B2B2B !important;
+            opacity: 1;
+        }
+
+        /* Contact popup (#paradiseFormModal): custom dropdown arrow color (Figma) */
+        #paradiseFormModal select.form-input {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            padding-right: 46px;
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 22px 22px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6' fill='none' stroke='%23D88C7A' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        }
+
+        /* Hide default arrow in old Edge/IE */
+        #paradiseFormModal select.form-input::-ms-expand {
+            display: none;
+        }
+
+        #paradiseFormModal .form-input:focus {
+            border-bottom-color: #2F5F63 !important;
+            outline: none;
+            box-shadow: none;
+        }
+
+        /* Download popup (#downloadFormModal): heading matches index headings */
+        #downloadFormModal .form-heading.modal-form-heading {
+            color: #2F5F63 !important;
+            font-family: "TAN-Angleton", serif !important;
+            font-weight: 400 !important;
+        }
+
+        /* Download popup (#downloadFormModal): make heading responsive on mobile */
+        @media (max-width: 767px) {
+            #downloadFormModal .modal-form-heading {
+                white-space: normal !important;
+                text-wrap: balance;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                line-height: 1.2;
+            }
+
+            #downloadFormModal .form-heading-section {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+        }
+
+        /* Index-only: social grid background match body */
+        .social-grid-section {
+            background-color: #F0ECE4;
+        }
+
+        /* Index-only: footer background */
+        body.page-home .footer {
+            background-color: #2F7F86 !important;
+        }
+
+        /* Index-only: selling text section background match header */
+        .selling-text-section {
+            background-color: #F0ECE4;
+        }
+
+        @media (max-width: 767px) {
+            body.page-home {
+                padding-top: 118px;
+            }
+
+            .site-header--cream {
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+
+            .site-header--cream .header-inner {
+                flex-direction: column;
+                align-items: stretch;
+                min-height: 0;
+            }
+
+            .site-header--cream .header-contact {
+                justify-content: center;
+                padding-right: 44px;
+                padding-left: 8px;
+            }
+
+            .site-header--cream .header-menu-col {
+                position: absolute;
+                top: 8px;
+                right: 12px;
+            }
+
+            .site-header--cream .header-logo-center {
+                order: 1;
+            }
+
+            .site-header--cream .header-brand-stack {
+                padding: 0 44px 4px;
+            }
+
+            .site-header--cream .header-main-logo {
+                max-height: 60px;
+                max-width: min(300px, 62vw);
+            }
+
+            .site-header--cream .header-phone {
+                font-size: 0.875rem;
+            }
+
+            .site-header--cream .header-social a {
+                font-size: 1.05rem;
+            }
+        }
+
+        /* Desktop: fixed frame height (match Figma sections) */
+        @media (min-width: 992px) {
+
+            #residences .slider-image-area,
+            #hotel .slider-image-area,
+            #amenities .slider-image-area {
+                height: 550px;
+                overflow: hidden;
+            }
+
+            #residences .slider-image-area>img,
+            #hotel .slider-image-area>img,
+            #amenities .slider-image-area>img {
+                width: 100%;
+                height: 100%;
+                display: block;
+                object-fit: cover;
+            }
+        }
+
+        
+@media (max-width: 576px) {
+    .mobile-menu-dialog {
+        width: 280px;     
+        max-width: 100%;    
+        right: 0;         
+        left: auto;       
+        margin: 0;        
+        padding: 0;      
+    }
+}
+@media (max-width: 320px) {
+    .mobile-menu-dialog {
+        width: 100%;
+    }
+}
+@media (min-width: 768px) {
+    .mobile-menu {
+        display: none !important;
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 400px) {
+    .mobile-menu-dialog {
+        width: 80%; 
+        max-width: 260px;
+    }
+}
+@media (max-width: 768px) {
+  .desktop-heading {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    font-size: 1.5rem; 
+  }
+}
+
+@media (max-width: 767px) {
+  .modal-form-heading {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  .modal-body .row {
+    --bs-gutter-y: 1rem; 
+  }
+
+  .modal-body .row.mt-3 {
+    margin-top: 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  .form-heading-section {
+    margin-left: -4rem;
+    margin-right: -4rem;
+    text-align: center;
+    padding-top: 0;
+  }
+}
+@media (max-width: 767px) {
+  .modal-form-heading {
+    padding: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+     white-space: nowrap;   
+  }
+}
+
+@media (max-width: 400px) {
+  .form-heading-section,
+  .form-input-section {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .modal-form-heading {
+    text-align: center;
+    white-space: nowrap;
+    margin: 0 auto;
+  }
+
+  .form-input-section input,
+  .form-input-section select,
+  .form-input-section textarea {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .modal-body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .modal-body .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .form-heading-section,
+  .form-input-section {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .modal-form-heading {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+
+/* Center form on mobile */
+@media (max-width: 767px) {
+  #downloadFormModal .modal-body {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #downloadFormModal .modal-body form {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .form-heading-section {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+   .form-heading-section-top-p {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .modal-form-heading {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Center form rows */
+  #downloadFormModal .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100%;
+  }
+
+  #downloadFormModal .col-12 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+@media (max-width: 400px) {
+  #downloadFormModal .modal-body {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .story-name-section {
+    padding-bottom: 40px !important; 
+  }
+
+  .form-heading-section {
+    margin-top: 20px !important;
+    padding-top: 0 !important;
+  }
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    
+}
+select.form-input {
+    padding-bottom: 15px;
+}
+
+
+
+@media (max-width: 767px) {
+  .story-name-section {
+    padding-bottom: 1.5rem !important;
+  }
+
+  .form-heading-section {
+    margin-top: 0.5rem !important;
+    padding-top: 0.5rem !important;
+  }
+
+  .form-heading {
+    margin-top: 0 !important;
+  }
+
+}
+
+#downloadFormModal .modal-dialog {
+    max-width: 1100px;
+    margin: auto; 
+}
+
+#downloadFormModal .modal-content {
+    background: #ffffff !important;
+    color: #000;
+}
+#downloadFormModal .modal-body {
+    padding-top: 1.2rem !important;
+    padding-bottom: 2.2rem !important;
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
+}
+
+#downloadFormModal .modal-body {
+    background: #ffffff;
+}
+
+    </style>
+</head>
+
+<div class="modal fade" id="downloadFormModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content contact-modal">
+
+            <!-- Close Button -->
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body px-5">
+
+                <div class="form-heading-section form-heading-section-top-p" style="padding-top:0.5rem;">
+                    <h2 class="form-heading modal-form-heading desktop-heading"
+                        style="margin-top:0.25rem; padding-left: 10rem; padding-right: 10rem; text-align: center; width: 100%;">
+                        ACCESS EXCLUSIVE INFORMATION
+                    </h2>
+
+                </div>
+
+                <form action="paradise.php" method="post" target="_blank">
+
+                    <!-- Hidden File -->
+                    <input type="hidden" name="download_file" id="downloadFile">
+
+                    <!-- ROW 1 -->
+                    <div class="row g-4">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <input type="text" name="first_name" class="form-input" placeholder="First Name*" required>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <input type="text" name="last_name" class="form-input" placeholder="Last Name*" required>
+                        </div>
+                    </div>
+
+                    <!-- ROW 2 -->
+                    <div class="row g-4 mt-3">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <input type="email" name="email" class="form-input" placeholder="Email*" required>
+                        </div>
+
+                        <!-- PHONE -->
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div style="display:flex; gap:8px;">
+                                <select name="country_code" class="form-input country-code" required>
+                                    <option value="+1">+1 (US)</option>
+                                    <option value="+1">+1 (CA)</option>
+
+                                    <option value="+7">+7 (RU)</option>
+                                    <option value="+7">+7 (KZ)</option>
+
+                                    <option value="+20">+20 (EG)</option>
+                                    <option value="+27">+27 (ZA)</option>
+                                    <option value="+30">+30 (GR)</option>
+                                    <option value="+31">+31 (NL)</option>
+                                    <option value="+32">+32 (BE)</option>
+                                    <option value="+33">+33 (FR)</option>
+                                    <option value="+34">+34 (ES)</option>
+                                    <option value="+36">+36 (HU)</option>
+                                    <option value="+39">+39 (IT)</option>
+
+                                    <option value="+40">+40 (RO)</option>
+                                    <option value="+41">+41 (CH)</option>
+                                    <option value="+43">+43 (AT)</option>
+                                    <option value="+44">+44 (UK)</option>
+                                    <option value="+45">+45 (DK)</option>
+                                    <option value="+46">+46 (SE)</option>
+                                    <option value="+47">+47 (NO)</option>
+                                    <option value="+48">+48 (PL)</option>
+                                    <option value="+49">+49 (DE)</option>
+
+                                    <option value="+51">+51 (PE)</option>
+                                    <option value="+52">+52 (MX)</option>
+                                    <option value="+53">+53 (CU)</option>
+                                    <option value="+54">+54 (AR)</option>
+                                    <option value="+55">+55 (BR)</option>
+                                    <option value="+56">+56 (CL)</option>
+                                    <option value="+57">+57 (CO)</option>
+                                    <option value="+58">+58 (VE)</option>
+
+                                    <option value="+60">+60 (MY)</option>
+                                    <option value="+61">+61 (AU)</option>
+                                    <option value="+62">+62 (ID)</option>
+                                    <option value="+63">+63 (PH)</option>
+                                    <option value="+64">+64 (NZ)</option>
+                                    <option value="+65">+65 (SG)</option>
+                                    <option value="+66">+66 (TH)</option>
+
+                                    <option value="+81">+81 (JP)</option>
+                                    <option value="+82">+82 (KR)</option>
+                                    <option value="+84">+84 (VN)</option>
+                                    <option value="+86">+86 (CN)</option>
+
+                                    <option value="+90">+90 (TR)</option>
+                                    <option value="+91">+91 (IN)</option>
+                                    <option value="+1" selected>+1 (BS)</option>
+                                    <option value="+92">+92 (PK)</option>
+                                    <option value="+93">+93 (AF)</option>
+                                    <option value="+94">+94 (LK)</option>
+                                    <option value="+95">+95 (MM)</option>
+                                    <option value="+98">+98 (IR)</option>
+
+                                    <option value="+212">+212 (MA)</option>
+                                    <option value="+213">+213 (DZ)</option>
+                                    <option value="+216">+216 (TN)</option>
+                                    <option value="+218">+218 (LY)</option>
+
+                                    <option value="+220">+220 (GM)</option>
+                                    <option value="+221">+221 (SN)</option>
+                                    <option value="+222">+222 (MR)</option>
+                                    <option value="+223">+223 (ML)</option>
+                                    <option value="+224">+224 (GN)</option>
+                                    <option value="+225">+225 (CI)</option>
+                                    <option value="+226">+226 (BF)</option>
+                                    <option value="+227">+227 (NE)</option>
+                                    <option value="+228">+228 (TG)</option>
+                                    <option value="+229">+229 (BJ)</option>
+
+                                    <option value="+230">+230 (MU)</option>
+                                    <option value="+231">+231 (LR)</option>
+                                    <option value="+232">+232 (SL)</option>
+                                    <option value="+233">+233 (GH)</option>
+                                    <option value="+234">+234 (NG)</option>
+                                    <option value="+235">+235 (TD)</option>
+                                    <option value="+236">+236 (CF)</option>
+                                    <option value="+237">+237 (CM)</option>
+                                    <option value="+238">+238 (CV)</option>
+                                    <option value="+239">+239 (ST)</option>
+
+                                    <option value="+240">+240 (GQ)</option>
+                                    <option value="+241">+241 (GA)</option>
+                                    <option value="+242">+242 (CG)</option>
+                                    <option value="+243">+243 (CD)</option>
+                                    <option value="+244">+244 (AO)</option>
+                                    <option value="+245">+245 (GW)</option>
+                                    <option value="+246">+246 (IO)</option>
+                                    <option value="+248">+248 (SC)</option>
+                                    <option value="+249">+249 (SD)</option>
+
+                                    <option value="+251">+251 (ET)</option>
+                                    <option value="+252">+252 (SO)</option>
+                                    <option value="+253">+253 (DJ)</option>
+                                    <option value="+254">+254 (KE)</option>
+                                    <option value="+255">+255 (TZ)</option>
+                                </select>
+
+                                <input type="tel" name="phone" class="form-input" placeholder="Phone Number*"
+                                    pattern="^[0-9]{7,15}$" title="Only digits allowed, 7–15 digits" minlength="7"
+                                    maxlength="15" required>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- SUBMIT -->
+                    <div class="submit-wrapper">
+                        <button type="submit" class="submit-btn">
+                            SUBMIT <span class="arrow-color">→</span>
+                        </button>
+                    </div>
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<body class="page-home">
+    <div id="myNav" class="side-nav">
+        <div class="side-nav-content">
+            <!-- <a href="./paradise-on-earth.html" onclick="toggleNav()">Paradise On Earth</a> -->
+            <a href="#residences" onclick="toggleNav()">Residences</a>
+            <a href="#hotel" onclick="toggleNav()">The Hotel</a>
+            <a href="#amenities" onclick="toggleNav()">Amenities</a>
+            <a href="#selling"onclick="toggleNav()">
+                Contact Us
+            </a>
+        </div>
+    </div>
+    <nav class="navbar fixed-top site-header site-header--cream" aria-label="Primary">
+        <div class="container-fluid px-3 px-lg-4 position-relative">
+            <div class="header-inner d-flex align-items-center w-100">
+                <div class="header-contact d-flex align-items-center flex-shrink-0">
+                    <!-- <a href="tel:+12424541232" class="header-phone">242.454.1232</a> -->
+                    <!-- <span class="header-contact-divider" aria-hidden="true"></span> -->
+                    
+                    </div>
+                </div>
+                <div class="header-logo-center flex-grow-1 d-flex justify-content-center px-2">
+                    <a href="./index.html" class="text-decoration-none d-inline-block header-brand-stack">
+                        <img src="images/logo full.svg"
+                            alt="Paradise Breeze — Curio Collection by Hilton" class="header-main-logo img-fluid">
+                    </a>
+                </div>
+                <div class="header-menu-col flex-shrink-0">
+                    <button id="menuBtn" type="button" class="menu-trigger hamburger-btn border-0 bg-transparent"
+                        onclick="toggleNav()" aria-label="Open menu">
+                        <span class="menu-label">Menu</span>
+                        <span class="close-label">Close</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section d-flex align-items-end">
+
+        <!-- Background Video -->
+        <video class="hero-video" autoplay muted loop playsinline webkit-playsinline>
+            <source src="images/homepage.mp4" id="videoSource" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Optional dark overlay for text contrast -->
+        <div class="hero-overlay"></div>
+
+        <!-- Content -->
+        <div class="hero-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8">
+                        <h1 class="hero-title">PARADISE BEGINS HERE</h1>
+                        <h2 class="hero-title">THE ADVENTURE STARTS 2026</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="intro-section">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-9 text-center central-head-text">
+                    <h4 class="sub-heading-small">A NEW EXPRESSION OF HOSPITALITY IN THE BAHAMAS</h4>
+                    <!-- Desktop/tablet heading (2-line layout) -->
+                    <h2 class="main-heading-teal intro-heading-angleton intro-heading-desktop">
+                        <span class="intro-line1">INTRODUCING PARADISE BREEZE NASSAU</span>
+                        <span class="intro-line3"> CURIO COLLECTION BY HILTON</span>
+                    </h2>
+
+                    <!-- Mobile heading (match line breaks/order from design) -->
+                    <h2 class="main-heading-teal intro-heading-angleton intro-heading-mobile" aria-label="INTRODUCING PARADISE BREEZE NASSAU CURIO COLLECTION BY HILTON">
+                        <span class="intro-mobile-line">INTRODUCING</span>
+                        <span class="intro-mobile-line">PARADISE BREEZE</span>
+                        <span class="intro-mobile-line">NASSAU</span>
+                        <span class="intro-mobile-line">CURIO COLLECTION</span>
+                        <span class="intro-mobile-line">BY HILTON</span>
+                    </h2>
+
+                    <div class="body-text">
+                        <p>Nestled along the stunning Bahamian coastline, Paradise Breeze is a modern sanctuary designed to offer both hotel guests
+                        and residence owners the perfect balance of vibrant adventure and unparalleled relaxation. Surrounded by breathtaking
+                        ocean views and coastal landscapes, this hybrid resort located on West Bay St., Nassau, Bahamas, will offer 117
+                        elegantly appointed suites and 8 exclusive penthouses.</p>
+                        <p>Paradise Breeze will be home to multiple dining destinations, including a rooftop signature restaurant and a pool
+                        restaurant, as well as over 4000 square feet of versatile event space, a spectacular infinity pool, curated social
+                        lounges and engaging activities for children of all ages. For those seeking wellness and rejuvenation, the resort will
+                        offer a state-of-the-art fitness center with squash and padel courts, a yoga and relaxation garden, along with
+                        our signature hydrotherapy spa.</p>
+                        <p>From its thoughtfully curated amenities to its beautiful ocean views, this beachfront resort and residences will
+                        seamlessly blend refined elegance with the vibrant spirit of the Bahamas, making every moment feel like paradise.
+                        Now selling.</p>
+                    </div>
+                    <a href="#" class="btn-custom-outline" data-bs-toggle="modal" data-bs-target="#paradiseFormModal">
+                        OWN YOUR PLACE IN PARADISE <span class="arrow-color"> &rarr; </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="residences" class="slider-section-container container">
+        <div class="container-fluid ">
+            <div class="slider-wrapper position-relative">
+                <div class="slider-image-area">
+                    <img src="images/slider11.png" class="d-block w-100" alt="Living Room">
+                </div>
+                <div class="slider-text-card">
+                    <h3 class="card-title-teal">RESIDENCES</h3>
+                    <p class="card-text card-text-1">The Residences at Paradise Breeze, Curio Collection by Hilton<sup class="tm">™</sup>,
+                        present a truly exceptional real estate opportunity—the first Curio Collection by Hilton<sup class="tm">™</sup> in the
+                        Bahamas.
+                        Owners may choose to enjoy their residence privately or participate in a professionally managed
+                        rental program. Regardless of participation, all owners enjoy full access to the resort’s
+                        amenities and receive Hilton Honors<sup class="tm">™</sup> Gold Status. </p>
+                    <a href="#" class="btn-gold-link" data-bs-toggle="modal" data-bs-target="#paradiseFormModal">
+                        JOIN THE FAMILY <span class="arrow-color">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hotel" class="container slider-section-container bg-light-gray">
+        <div class="container-fluid ">
+            <div class="slider-wrapper position-relative d-flex flex-row-reverse align-items-center">
+                <div class="slider-image-area">
+                    <img src="images/slider21.png" class="d-block w-100" alt="Lounge">
+                </div>
+                <div class="slider-text-card text-card-left">
+                    <h3 class="card-title-teal">THE HOTEL</h3>
+                    <p class="card-text">Paradise Breeze, Curio Collection by Hilton<sup class="tm">™</sup>, offers a thoughtful and
+                        contemporary approach to hospitality in Nassau. We curate a modern sanctuary, where
+                        architecture, culture, and experience come together in a way that feels natural and unforced.
+                        Each moment is shaped by intention, from spaces that invite connection to experiences rooted in
+                        the spirit of the island.</p>
+                    <button class="btn btn-gold-link" data-bs-toggle="modal" data-bs-target="#paradiseFormModal">LEARN MORE <span class="arrow-color"> &rarr;</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="amenities" class="container slider-section-container">
+        <div class="container-fluid ">
+            <div class="slider-wrapper position-relative">
+                <div class="slider-image-area">
+                    <img src="images/1.png" class="d-block w-100" alt="Bar">
+                </div>
+                <div class="slider-text-card">
+                    <h3 class="card-title-teal">AMENITIES</h3>
+                    <ul class="amenities-list">
+                        <li>Paradise Lobby Café and Curated Market</li>
+                        <li>Signature Rooftop Restaurant</li>
+                        <li>Pool Terrace Restaurant</li>
+                        <li>Poolside Cocktail and Smoothie Bar</li>
+                        <li>State-of-the-Art Hydrotherapy Spa</li>
+                        <li>RPR Fitness and Wellness Club</li>
+                        <li>Padel and Squash Courts</li>
+                        <li>Library and Co-Working Lounge</li>
+                        <li>Indoor-Outdoor Event Space</li>
+                        <li>Kids' Playground and Outdoor Game Area</li>
+                        <li>Yoga and Meditation Spaces</li>
+                        <li>Dog Wash Station</li>
+                    </ul>
+                    <button class="btn btn-gold-link" data-bs-toggle="modal" data-bs-target="#paradiseFormModal">JOIN
+                        THE FAMILY <span class="arrow-color"> &rarr;</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="selling" class="selling-text-section">
+        <div class="container text-center">
+            <h4 class="sub-heading-teal-selling">SELLING NOW</h4>
+            <h2 class="main-heading-teal-selling mb-4">OWN YOUR PLACE IN PARADISE</h2>
+
+            <a href="#" class="btn-outline-gold" data-bs-toggle="modal" data-bs-target="#paradiseFormModal">
+                CONTACT SALES <span class="arrow-color">&rarr;</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="social-grid-section">
+        <div class="container-fluid ">
+            <div class="social-block">
+                <img src="images/Group.png" class="social-star" alt="" aria-hidden="true">
+                <div class="social-handle">@PARADISEBREEZEBAHAMAS</div>
+                <img src="images/Group.png" class="social-star" alt="" aria-hidden="true">
+            </div>
+
+            <div class="social-scroll-wrapper">
+                <div class="flex-nowrap d-flex social-scroll">
+
+                    <div class="col-10 col-md-6 col-lg-3 social-col">
+                        <div class="social-img-wrapper position-relative overflow-hidden">
+                            <img src="images/Instagram.png" class="img-fluid w-100 social-img" alt="Instagram">
+
+                            <div class="social-overlay d-flex align-items-center justify-content-center">
+                                <a href="https://www.instagram.com/paradisebreezebahamas/" target="_blank">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-10 col-md-6 col-lg-3 social-col">
+                        <div class="social-img-wrapper position-relative overflow-hidden">
+                            <img src="images/Instagram (1).png" class="img-fluid w-100 social-img" alt="Instagram">
+                            <div class="social-overlay d-flex align-items-center justify-content-center">
+                                <a href="https://www.instagram.com/paradisebreezebahamas/" target="_blank">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-10 col-md-6 col-lg-3 social-col">
+                        <div class="social-img-wrapper position-relative overflow-hidden">
+                            <img src="images/Instagram (2).png" class="img-fluid w-100 social-img" alt="Instagram">
+                            <div class="social-overlay d-flex align-items-center justify-content-center">
+                                <a href="https://www.instagram.com/paradisebreezebahamas/" target="_blank">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-10 col-md-6 col-lg-3 social-col">
+                        <div class="social-img-wrapper position-relative overflow-hidden">
+                            <img src="images/Instagram (3).png" class="img-fluid w-100 social-img" alt="Instagram">
+                            <div class="social-overlay d-flex align-items-center justify-content-center">
+                                <a href="https://www.instagram.com/paradisebreezebahamas/" target="_blank">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row footer-row">
+                <div class="col-12 col-md-4 footer-left">
+                    <img src="images/logo short white.png" alt="Paradise Breeze Logo" class="img-fluid footer-logo">
+                </div>
+                <div class="col-12 col-md-3 ms-md-auto right-col">
+                    <p><a href="mailto:info@paradisebreeze.com"
+                            style="color: #fff;text-decoration: none;">info@paradisebreeze.com</a></p>
+                    <p>www.paradisebreeze.com</p>
+                    <p>West Bay Street, Nassau, Bahamas</p>
+                </div>
+                <div class="col-12 col-md-3 ms-md-auto right-col right-gap">
+                    <p>
+                        <a href="https://www.instagram.com/paradisebreezebahamas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: none;">
+                            Instagram
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="https://www.facebook.com/share/1BsF1JqySu/?mibextid=wwXIfr" target="_blank"
+                            rel="noopener noreferrer" style="color: #fff; text-decoration: none;">
+                            Facebook
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="https://www.linkedin.com/company/paradise-breeze/" target="_blank"
+                            rel="noopener noreferrer" style="color: #fff;text-decoration: none;">
+                            LinkedIn
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-12 col-md-2 footer-right">
+                    <img src="images/logo-footer.png" alt="logo footer" class="img-fluid">
+                </div>
+            </div>
+            <div class="footer-inner">
+
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Paradise Breeze - All Rights Reserved</p>
+
+                <div class="footer-links">
+                    <a href="./privacy-policy.html">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="./terms-and-conditions.html">Terms & Conditions</a>
+                    <span>|</span>
+                    <a href="./legal-disclaimer.html">Legal Disclaimer</a>
+                </div>
+            </div>
+    </footer>
+    <!---form modal-->
+    <div class="modal fade" id="paradiseFormModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+
+                <!-- Close Button -->
+                <!-- MODAL HEADER (FIX) -->
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body px-5">
+
+                    <!-- ===== YOUR ORIGINAL CODE (UNCHANGED) ===== -->
+
+                    <div class="form-heading-section">
+                        <h2 class="form-heading modal-form-heading text-center"
+                            style="text-align: center; text-wrap: balance;">
+                            BE THE FIRST TO RECEIVE NEWS AND UPDATES FROM <br>
+                            PARADISE BREEZE HOTEL &amp; RESIDENCES <br>
+                            IN NASSAU, THE BAHAMAS
+                        </h2>
+                    </div>
+
+                    <form action="send-form.php" method="post">
+                        <section class="form-section form-modal">
+                            <div class=""></div>
+                            <!-- FORM ROW 1 -->
+                            <div class="row g-4">
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <input type="text" name="first_name" class="form-input" placeholder="First Name *"
+                                        required>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <input type="text" name="last_name" class="form-input" placeholder="Last Name*"
+                                        required>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <input type="text" name="email" class="form-input" placeholder="Email*" required>
+                                </div>
+                            </div>
+
+
+                            <!-- FORM ROW 2 -->
+                            <div class="row g-4 mt-3 form-col-margin">
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <input type="text" name="phone" class="form-input" placeholder="Phone*" required>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <select name="desired_residence_type" class="form-input">
+                                        <option value="" disabled selected hidden>Desired Residence Type</option>
+                                        <option value="Studio">Studio</option>
+                                        <option value="2-Bedroom Suite">2-Bedroom Suite</option>
+                                        <option value="3-Bedroom Suite">3-Bedroom Suite</option>
+                                        <option value="4-Bedroom Penthouse">4-Bedroom Penthouse</option>
+                                        <option value="5-Bedroom Penthouse">5-Bedroom Penthouse</option>
+
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <select name="country" class="form-input" required>
+                                        <option value="" disabled selected hidden>Select Country*</option>
+
+                                        <option value="Afghanistan">Afghanistan</option>
+                                        <option value="Albania">Albania</option>
+                                        <option value="Algeria">Algeria</option>
+                                        <option value="Andorra">Andorra</option>
+                                        <option value="Angola">Angola</option>
+                                        <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                        <option value="Argentina">Argentina</option>
+                                        <option value="Armenia">Armenia</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="Austria">Austria</option>
+                                        <option value="Azerbaijan">Azerbaijan</option>
+
+                                        <option value="Bahamas">Bahamas</option>
+                                        <option value="Bahrain">Bahrain</option>
+                                        <option value="Bangladesh">Bangladesh</option>
+                                        <option value="Barbados">Barbados</option>
+                                        <option value="Belarus">Belarus</option>
+                                        <option value="Belgium">Belgium</option>
+                                        <option value="Belize">Belize</option>
+                                        <option value="Benin">Benin</option>
+                                        <option value="Bhutan">Bhutan</option>
+                                        <option value="Bolivia">Bolivia</option>
+                                        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                                        <option value="Botswana">Botswana</option>
+                                        <option value="Brazil">Brazil</option>
+                                        <option value="Brunei">Brunei</option>
+                                        <option value="Bulgaria">Bulgaria</option>
+                                        <option value="Burkina Faso">Burkina Faso</option>
+                                        <option value="Burundi">Burundi</option>
+
+                                        <option value="Cambodia">Cambodia</option>
+                                        <option value="Cameroon">Cameroon</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="Cape Verde">Cape Verde</option>
+                                        <option value="Central African Republic">Central African Republic</option>
+                                        <option value="Chad">Chad</option>
+                                        <option value="Chile">Chile</option>
+                                        <option value="China">China</option>
+                                        <option value="Colombia">Colombia</option>
+                                        <option value="Comoros">Comoros</option>
+                                        <option value="Costa Rica">Costa Rica</option>
+                                        <option value="Croatia">Croatia</option>
+                                        <option value="Cuba">Cuba</option>
+                                        <option value="Cyprus">Cyprus</option>
+                                        <option value="Czech Republic">Czech Republic</option>
+
+                                        <option value="Denmark">Denmark</option>
+                                        <option value="Djibouti">Djibouti</option>
+                                        <option value="Dominica">Dominica</option>
+                                        <option value="Dominican Republic">Dominican Republic</option>
+
+                                        <option value="Ecuador">Ecuador</option>
+                                        <option value="Egypt">Egypt</option>
+                                        <option value="El Salvador">El Salvador</option>
+                                        <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                        <option value="Eritrea">Eritrea</option>
+                                        <option value="Estonia">Estonia</option>
+                                        <option value="Eswatini">Eswatini</option>
+                                        <option value="Ethiopia">Ethiopia</option>
+
+                                        <option value="Fiji">Fiji</option>
+                                        <option value="Finland">Finland</option>
+                                        <option value="France">France</option>
+
+                                        <option value="Gabon">Gabon</option>
+                                        <option value="Gambia">Gambia</option>
+                                        <option value="Georgia">Georgia</option>
+                                        <option value="Germany">Germany</option>
+                                        <option value="Ghana">Ghana</option>
+                                        <option value="Greece">Greece</option>
+                                        <option value="Grenada">Grenada</option>
+                                        <option value="Guatemala">Guatemala</option>
+                                        <option value="Guinea">Guinea</option>
+                                        <option value="Guyana">Guyana</option>
+
+                                        <option value="Haiti">Haiti</option>
+                                        <option value="Honduras">Honduras</option>
+                                        <option value="Hungary">Hungary</option>
+
+                                        <option value="Iceland">Iceland</option>
+                                        <option value="India">India</option>
+                                        <option value="Indonesia">Indonesia</option>
+                                        <option value="Iran">Iran</option>
+                                        <option value="Iraq">Iraq</option>
+                                        <option value="Ireland">Ireland</option>
+                                        <option value="Israel">Israel</option>
+                                        <option value="Italy">Italy</option>
+
+                                        <option value="Jamaica">Jamaica</option>
+                                        <option value="Japan">Japan</option>
+                                        <option value="Jordan">Jordan</option>
+
+                                        <option value="Kazakhstan">Kazakhstan</option>
+                                        <option value="Kenya">Kenya</option>
+                                        <option value="Kuwait">Kuwait</option>
+
+                                        <option value="Latvia">Latvia</option>
+                                        <option value="Lebanon">Lebanon</option>
+                                        <option value="Liberia">Liberia</option>
+                                        <option value="Lithuania">Lithuania</option>
+                                        <option value="Luxembourg">Luxembourg</option>
+
+                                        <option value="Malaysia">Malaysia</option>
+                                        <option value="Maldives">Maldives</option>
+                                        <option value="Mexico">Mexico</option>
+                                        <option value="Monaco">Monaco</option>
+                                        <option value="Morocco">Morocco</option>
+
+                                        <option value="Nepal">Nepal</option>
+                                        <option value="Netherlands">Netherlands</option>
+                                        <option value="New Zealand">New Zealand</option>
+                                        <option value="Nigeria">Nigeria</option>
+                                        <option value="Norway">Norway</option>
+
+                                        <option value="Oman">Oman</option>
+
+                                        <option value="Pakistan">Pakistan</option>
+                                        <option value="Panama">Panama</option>
+                                        <option value="Peru">Peru</option>
+                                        <option value="Philippines">Philippines</option>
+                                        <option value="Poland">Poland</option>
+                                        <option value="Portugal">Portugal</option>
+
+                                        <option value="Qatar">Qatar</option>
+
+                                        <option value="Romania">Romania</option>
+                                        <option value="Russia">Russia</option>
+
+                                        <option value="Saudi Arabia">Saudi Arabia</option>
+                                        <option value="Singapore">Singapore</option>
+                                        <option value="South Africa">South Africa</option>
+                                        <option value="South Korea">South Korea</option>
+                                        <option value="Spain">Spain</option>
+                                        <option value="Sri Lanka">Sri Lanka</option>
+                                        <option value="Sweden">Sweden</option>
+                                        <option value="Switzerland">Switzerland</option>
+
+                                        <option value="Thailand">Thailand</option>
+                                        <option value="Turkey">Turkey</option>
+
+                                        <option value="Ukraine">Ukraine</option>
+                                        <option value="United Arab Emirates">United Arab Emirates</option>
+                                        <option value="United Kingdom">United Kingdom</option>
+                                        <option value="United States">United States</option>
+                                        <option value="Uruguay">Uruguay</option>
+
+                                        <option value="Vietnam">Vietnam</option>
+
+                                        <option value="Yemen">Yemen</option>
+
+                                        <option value="Zambia">Zambia</option>
+                                        <option value="Zimbabwe">Zimbabwe</option>
+
+                                    </select>
+                                </div>
+
+
+                            </div>
+
+                            <!-- FORM ROW 3 -->
+                            <!-- FORM ROW 3 -->
+                            <div class="row g-4 mt-3 form-col-margin">
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <select name="contact_preference" class="form-input">
+                                        <option value="" disabled selected hidden>Contact Preference</option>
+                                        <option value="Any">Any</option>
+                                        <option value="Email">Email</option>
+                                        <option value="Phone Call">Phone Call</option>
+                                        <option value="Text Message">Text Message</option>
+                                        <option value="Whatsapp Message">Whatsapp Message</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <select name="heard_about" class="form-input" required>
+                                        <option value="" disabled selected hidden>How did you hear about us?*</option>
+                                        <option value="Curio Collection by Hilton">Curio Collection by Hilton</option>
+                                        <option value="Online Search">Online Search</option>
+                                        <option value="Press">Press</option>
+                                        <option value="Signage">Signage</option>
+                                        <option value="Social Media">Social Media</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <select name="broker" class="form-input" required>
+                                        <option value="" disabled selected hidden>Are you a broker?*</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- CHECKBOXES -->
+
+
+                            <!-- SUBMIT BUTTON -->
+                            <div class="submit-wrapper">
+                                <button type="submit" class="submit-btn">
+                                    SUBMIT <span class="arrow-color">→</span>
+                                </button>
+                            </div>
+
+                </div>
+                </section>
+                </form>
+
+                <!-- ===== END YOUR ORIGINAL CODE ===== -->
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        const video = document.getElementById('heroVideo');
+        const source = document.getElementById('videoSource');
+
+        // Check if mobile
+        if (window.innerWidth <= 767) {
+            source.src = 'images/homepage.mp4'; // Compressed mobile version
+        } else {
+            source.src = 'images/homepage.mp4'; // Full quality desktop version
+        }
+
+        video.load();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const video = document.querySelector(".hero-video");
+            if (video) {
+                video.muted = true;
+                video.play().catch(() => {
+                    console.log("Autoplay blocked by browser");
+                });
+            }
+        });
+    </script>
+
+    <script>
+        function isNavOpen(navEl) {
+            return navEl && navEl.style.width && navEl.style.width !== "0px" && navEl.style.width !== "0";
+        }
+
+        function closeNav() {
+            const nav = document.getElementById("myNav");
+            const btn = document.getElementById("menuBtn");
+            if (!nav || !btn) return;
+
+            nav.style.width = "0";
+            btn.classList.remove("active");
+            btn.setAttribute("aria-label", "Open menu");
+        }
+
+        function openNav() {
+            const nav = document.getElementById("myNav");
+            const btn = document.getElementById("menuBtn");
+            if (!nav || !btn) return;
+
+            // Smaller panel on mobile
+            const w = window.innerWidth <= 767 ? "175px" : "250px";
+            nav.style.width = w;
+            btn.classList.add("active");
+            btn.setAttribute("aria-label", "Close menu");
+        }
+
+        function toggleNav() {
+            const nav = document.getElementById("myNav");
+            if (!nav) return;
+
+            if (isNavOpen(nav)) closeNav();
+            else openNav();
+        }
+
+        // Close on outside click + on Escape
+        document.addEventListener("click", function (e) {
+            const nav = document.getElementById("myNav");
+            const btn = document.getElementById("menuBtn");
+            if (!nav || !btn) return;
+            if (!isNavOpen(nav)) return;
+
+            const clickedInsideNav = nav.contains(e.target);
+            const clickedMenuBtn = btn.contains(e.target);
+            if (!clickedInsideNav && !clickedMenuBtn) {
+                closeNav();
+            }
+        });
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") closeNav();
+        });
+    </script>
+    <script>
+        function openDownloadModal(file) {
+            document.getElementById("downloadFile").value = file;
+            new bootstrap.Modal(document.getElementById("downloadFormModal")).show();
+        }
+    </script>
+    
+    
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleLink = document.querySelector(".see-floor-plans");
+            const sublist = document.querySelector(".floor-plans-sublist");
+            const icon = toggleLink.querySelector("i");
+
+            toggleLink.addEventListener("click", function (e) {
+                e.preventDefault(); // prevent page jump
+
+                sublist.classList.toggle("show");
+
+                // Toggle icon direction
+                if (sublist.classList.contains("show")) {
+                    icon.classList.remove("bi-chevron-up");
+                    icon.classList.add("bi-chevron-down");
+                } else {
+                    icon.classList.remove("bi-chevron-down");
+                    icon.classList.add("bi-chevron-up");
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentPage = window.location.pathname.split("/").pop();
+
+            document.querySelectorAll(".mobile-nav a").forEach(link => {
+                const linkPage = link.getAttribute("href").split("/").pop();
+
+                if (linkPage === currentPage) {
+                    link.classList.add("active");
+                } else {
+                    link.classList.remove("active");
+                }
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
