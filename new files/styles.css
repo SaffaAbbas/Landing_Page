@@ -466,6 +466,14 @@ color:#2F7F86 ;
     background-color: #F5F5F5;
 }
 
+/* Desktop-only: reduce extra vertical whitespace */
+@media (min-width: 768px) {
+  .selling-text-section {
+    padding-top: 60px;
+    padding-bottom: 50px;
+  }
+}
+
 .btn-outline-gold {
     display: inline-flex; align-items: center; text-decoration: none; text-transform: uppercase;
     color: #2F5F63; border: 1px solid #C4B298; padding: 12px 30px; font-size: 0.8rem;

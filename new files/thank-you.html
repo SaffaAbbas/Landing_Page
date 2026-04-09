@@ -32,6 +32,94 @@ section.story-name-section {
   flex: 1;
 }
 
+/* Thank-you popup (shown on page load) */
+.thankyou-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(47, 127, 134, 0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 2000;
+}
+
+.thankyou-modal-backdrop.is-open {
+  display: flex;
+}
+
+.thankyou-modal {
+  width: min(920px, 94vw);
+  background: #F0ECE4;
+  border-radius: 4px;
+  padding: 56px 28px 44px;
+  text-align: center;
+  position: relative;
+}
+
+.thankyou-modal-close {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255, 255, 255, 0.85);
+  color: #8E7761;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2100;
+}
+
+.thankyou-title {
+  margin: 0 0 10px;
+  font-family: "TAN-Angleton", serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #2F5F63;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.thankyou-subtitle {
+  margin: 0 0 26px;
+  color: #2B2B2B;
+  font-family: 'Public Sans', sans-serif;
+}
+
+.thankyou-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 26px;
+  border: 1px solid #C4B298;
+  color: #2F5F63;
+  font-family: 'Public Sans', sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 12px;
+  background: transparent;
+}
+
+.thankyou-cta .arrow {
+  color: #D67B63;
+  font-size: 16px;
+  line-height: 1;
+}
+
+@media (max-width: 767px) {
+  .thankyou-modal {
+    padding: 44px 18px 34px;
+  }
+  .thankyou-title {
+    font-size: 18px;
+  }
+}
+
     /* Side navigation on the right */
     .side-nav {
         height: 100%;
@@ -263,88 +351,56 @@ section.story-name-section {
 </style>
 <body class="thank-you-page">
 
-    <!-- Header (match privacy-policy style: logo only, no menu) -->
-    <nav class="navbar site-new-header">
-        <div class="container-fluid px-4 px-lg-5">
-            <div class="row w-100 align-items-center m-0">
-                <div class="col-6 col-md-2 header-new-left">
-                    <a href="./index.html">
-                        <img src="images/logo full.svg" class="img img-fluid general-logo" alt="Logo">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+
     
-    <section class="story-name-section">
-        <div class="container-xl">
-            <div class="row align-items-center g-5">
-                <h1 class="heading-h2-style">
-                    THANK YOU FOR SUBMITTING AN INQUIRY.<br>
-                    OUR TEAM WILL CONTACT YOU SHORTLY.</h1>
-            </div>
+    <section class="story-name-section"></section>
+
+    <!-- Thank-you popup -->
+    <button type="button" class="thankyou-modal-close" id="thankyouCloseBtn" aria-label="Close">×</button>
+    <div class="thankyou-modal-backdrop" id="thankyouModal" role="dialog" aria-modal="true" aria-label="Thank you">
+        <div class="thankyou-modal">
+            <h2 class="thankyou-title">THANK YOU FOR SUBMITTING AN INQUIRY.</h2>
+            <p class="thankyou-subtitle">Our team will contact you shortly.</p>
+            <a class="thankyou-cta" href="./index.html">
+                BACK TO HOME PAGE <span class="arrow">→</span>
+            </a>
         </div>
-    </section>
+    </div>
 
     <!-- THINGS TO DO SECTION -->
   <!-- Footer Section -->
-    <footer class="footer">
-        <div class="contaienr">
-            <div class="row footer-row">
-                <div class="col-12 col-md-4 footer-left">
-                    <img src="images/logo short white.png" alt="Paradise Breeze Logo" class="img-fluid footer-logo">
-                </div>
-                <div class="col-12 col-md-3 ms-md-auto right-col">
-                    <p><a href="mailto:info@paradisebreeze.com"
-                            style="color: #fff;text-decoration: none;">info@paradisebreeze.com</a></p>
-                    <p>www.paradisebreeze.com</p>
-                    <p>West Bay Street, Nassau, Bahamas</p>
-                </div>
-                <div class="col-12 col-md-3 ms-md-auto right-col right-gap">
-                    <p>
-                        <a href="https://www.instagram.com/paradisebreezebahamas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                            target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: none;">
-                            Instagram
-                        </a>
-                    </p>
-                    
-                    <p>
-                        <a href="https://www.facebook.com/share/1BsF1JqySu/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"
-                            style="color: #fff; text-decoration: none;">
-                            Facebook
-                        </a>
-                    </p>
-                
-                    <p>
-                        <a href="https://www.linkedin.com/company/paradise-breeze/" target="_blank" rel="noopener noreferrer"
-                            style="color: #fff;text-decoration: none;">
-                            LinkedIn
-                        </a>
-                    </p>
-                </div>
-    
-                <div class="col-12 col-md-2 footer-right">
-                    <img src="images/logo-footer.png" alt="logo footer" class="img-fluid">
-                </div>
-            </div>
-            <div class="footer-inner">
-    
-            </div>
-    
-            <div class="footer-bottom">
-                <p class="footer-copyright">© 2026 Paradise Breeze - All Rights Reserved</p>
-    
-                <div class="footer-links">
-                    <a href="./privacy-policy.html">Privacy Policy</a>
-                    <span>|</span>
-                    <a href="./terms-and-conditions.html">Terms & Conditions</a>
-                    <span>|</span>
-                    <a href="./legal-disclaimer.html">Legal Disclaimer</a>
-                </div>
-            </div>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (function () {
+            const modal = document.getElementById("thankyouModal");
+            const closeBtn = document.getElementById("thankyouCloseBtn");
+            if (!modal || !closeBtn) return;
+
+            function close() {
+                modal.classList.remove("is-open");
+                closeBtn.style.display = "none";
+                document.body.style.overflow = "";
+            }
+
+            function open() {
+                modal.classList.add("is-open");
+                closeBtn.style.display = "inline-flex";
+                document.body.style.overflow = "hidden";
+            }
+
+            closeBtn.addEventListener("click", close);
+            modal.addEventListener("click", function (e) {
+                if (e.target === modal) close();
+            });
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") close();
+            });
+
+            // Show popup immediately on page load
+            open();
+        })();
+    </script>
 </body>
 
 </html>                                          
