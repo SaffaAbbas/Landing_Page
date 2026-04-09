@@ -255,7 +255,7 @@ body.thank-you-page h1.heading-h2-style {
     .legal-disclaimer-text{
         margin-left: 100px;
         margin-right: 100px;
-        font-family: 'Neue Montreal';
+        font-family: 'Public Sans', sans-serif;
     }
         @media (max-width: 767px) {
             .legal-disclaimer-text p {
@@ -267,7 +267,7 @@ body.thank-you-page h1.heading-h2-style {
                               .legal-disclaimer-text {
                                   margin-left: 15px;
                                   margin-right: 15px;
-                                font-family: 'Neue Montreal';
+                                font-family: 'Public Sans', sans-serif;
                               }
             
                               .legal-disclaimer-text p,
@@ -277,11 +277,15 @@ body.thank-you-page h1.heading-h2-style {
                                   letter-spacing: normal !important;
                                   word-spacing: normal !important;
                                   hyphens: auto;
-                                font-family: 'Neue Montreal';
+                                font-family: 'Public Sans', sans-serif;
                               }
                           }
-    p{
-        font-family:'Neue Montreal';
+
+    /* Legal pages: paragraph text should be Public Sans (p only) */
+    body.privacy-policy-page p,
+    body.terms-and-conditions-page p,
+    body.legal-disclaimer-page p {
+        font-family: 'Public Sans', sans-serif !important;
         font-weight: 300;
         font-size: 18px;
         line-height: 160%;
@@ -314,7 +318,7 @@ body.thank-you-page h1.heading-h2-style {
         font-size: 15px;
         margin-bottom: 15px;
         color: #2B2B2B;
-        font-family: "Neue Montreal";
+        font-family: 'Public Sans', sans-serif !important;
     }
 
     a {
@@ -363,7 +367,17 @@ body.thank-you-page h1.heading-h2-style {
 
     .contact-info {
         margin-top: 10px;
-        font-family: "Neue Montreal";
+        font-family: 'Public Sans', sans-serif;
+    }
+
+    /* Mobile: legal page paragraph size 16px */
+    @media (max-width: 767px) {
+        body.privacy-policy-page p,
+        body.terms-and-conditions-page p,
+        body.legal-disclaimer-page p {
+            font-size: 16px !important;
+            line-height: 150% !important;
+        }
     }
 
     

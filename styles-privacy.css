@@ -177,6 +177,20 @@ body.thank-you-page .general-logo {
         margin-bottom: 50px;
         text-align: justify;
     }
+
+    /* When using the homepage fixed header on legal pages,
+       remove extra gaps so the title starts like the homepage */
+    body.privacy-policy-page .content-container,
+    body.terms-and-conditions-page .content-container,
+    body.legal-disclaimer-page .content-container {
+        margin-top: 0 !important;
+    }
+
+    body.privacy-policy-page .content-start,
+    body.terms-and-conditions-page .content-start,
+    body.legal-disclaimer-page .content-start {
+        margin-top: 24px !important;
+    }
     .heading-h2-style{
         font-family: Ogg Unlicensed Trial;
         font-size: 40px;
