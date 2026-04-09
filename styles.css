@@ -3494,6 +3494,15 @@ body {
   padding: 0;
 }
 
+/* Hide page scrollbar but keep scroll working */
+html, body {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
 .site-header {
   margin: 0;
   padding: 0;

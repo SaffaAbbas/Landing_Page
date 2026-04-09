@@ -40,9 +40,19 @@
         right: 0;
         background-color: #F0ECE4;
         overflow-x: hidden;
+        overflow-y: hidden;
         transition: 0.4s ease;
         padding-top: 80px;
         box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hide scrollbar (desktop menu) */
+    .side-nav {
+        -ms-overflow-style: none; /* IE/Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+    .side-nav::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
     }
 
     .side-nav-content {
@@ -121,6 +131,7 @@
             padding-right: 0;
             padding-left: 0;
             height: calc(100vh - 80px);
+            align-items: stretch; /* allow image to not be centered */
         }
 
         .side-nav-content a {
@@ -136,7 +147,12 @@
         }
 
         .side-nav-menu-image {
-            margin-bottom: -40px;
+            margin-bottom: 44px;
+            padding-bottom: 18px;
+            width: min(260px, 90%);
+            align-self: flex-start;
+            margin-left: 18px;
+            margin-right: auto;
         }
     }
 
