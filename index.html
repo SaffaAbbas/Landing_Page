@@ -129,7 +129,7 @@
         /* Desktop-only: nudge hero headline down + slightly increase line gap */
         @media (min-width: 768px) {
             .hero-content {
-                bottom: 18%;
+                bottom: 12%;
             }
 
             .hero-content .hero-title {
@@ -474,6 +474,7 @@
             .side-nav-menu-image {
                 margin-top: 0;
                 margin-bottom: 0;
+                width: min(200px, 62%);
             }
         }
 
@@ -490,6 +491,7 @@
                 margin-top: 48px;
                 padding-right: 0;
                 padding-left: 0;
+                height: calc(100vh - 80px);
             }
 
             .side-nav-content a {
@@ -502,6 +504,10 @@
             .side-nav-content a:focus,
             .side-nav-content a:focus-visible {
                 padding-right: 16px;
+            }
+
+            .side-nav-menu-image {
+                margin-bottom: -40px;
             }
         }
 
@@ -543,9 +549,14 @@
             gap: 16px;
         }
 
+        .social-scroll .social-col {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
         .social-scroll-wrapper {
-            padding-left: 16px;
-            padding-right: 16px;
+            padding-left: 0;
+            padding-right: 0;
         }
 
         /* Desktop: force Instagram tiles to 345x460 */
@@ -564,6 +575,15 @@
             .social-scroll .social-img {
                 width: 345px;
                 height: 460px;
+            }
+        }
+
+        /* Mobile: make Instagram tiles wider */
+        @media (max-width: 767.98px) {
+            .social-scroll .social-col {
+                flex: 0 0 92vw;
+                width: 92vw;
+                max-width: 92vw;
             }
         }
 
@@ -2261,7 +2281,7 @@ select.form-input {
     </section>
 
     <section class="social-grid-section">
-        <div class="container-fluid ">
+        <div class="container-fluid px-0">
             <div class="social-block">
                 <img src="images/Group.png" class="social-star" alt="" aria-hidden="true">
                 <div class="social-handle">@PARADISEBREEZEBAHAMAS</div>
