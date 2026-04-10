@@ -986,6 +986,17 @@
 
             }
 
+            /* Desktop-only: nudge "SELLING NOW" slightly left */
+            @media (min-width: 992px) {
+                #selling .sub-heading-teal-selling {
+                    display: inline-block;
+                    width: auto;
+                    position: relative;
+                    left: -26px;
+                    transform: none;
+                }
+            }
+
             /* Hero section must use viewport height on mobile */
             .hero-section {
                 position: relative;

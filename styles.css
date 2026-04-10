@@ -466,6 +466,17 @@ letter-spacing: 0%;
 text-transform: uppercase;
 color:#2F7F86 ;
 }
+
+/* Desktop-only: center + nudge slightly left */
+@media (min-width: 992px) {
+  #selling .sub-heading-teal-selling {
+    display: inline-block;
+    width: auto;
+    position: relative;
+    left: -26px;
+    transform: none;
+  }
+}
 .main-heading-teal-selling{
   font-family: "TAN-Angleton";
   font-weight: 500;
