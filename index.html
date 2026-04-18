@@ -583,12 +583,26 @@
             }
         }
 
-        /* Mobile: make Instagram tiles wider */
+        /* Mobile: slightly smaller tiles + consistent sizing */
         @media (max-width: 767.98px) {
+            .social-scroll {
+                gap: 12px;
+            }
+
+            /* Make each tile a bit narrower so next one peeks in */
             .social-scroll .social-col {
-                flex: 0 0 92vw;
-                width: 92vw;
-                max-width: 92vw;
+                flex: 0 0 76vw;
+                width: 76vw;
+                max-width: 76vw;
+            }
+
+            /* Keep all images equal height on mobile */
+            .social-img-wrapper {
+                height: 300px;
+            }
+
+            .social-img {
+                height: 100%;
             }
         }
 
